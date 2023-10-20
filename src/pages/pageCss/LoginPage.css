@@ -1,0 +1,81 @@
+:root {
+    --greenPrime: #72CA81;
+    --greenSec: #C4EECB;
+    --greenAccent: #389446;
+    --white: #FAFAFF;
+    --navy: #031926;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 100%;
+    margin: 20px auto 0 auto;
+    gap: 30px;
+    padding-bottom: 75px;
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.soMeLoginWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 85%;
+    height: 100%;
+}
+
+.lendrHeading {
+    color: var(--greenAccent);
+    font-family: 'Poppins', sans-serif;
+}
+
+.loginpageHr {
+    width: 100%;
+    border: 1px solid var(--greenAccent);
+    margin: 0 auto;
+}
+
+.signupMain form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%
+}
+
+.selectGenderWrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.selectGenderWrapper div {
+    display: flex;
+    gap: 5px;
+}
+
+.formerUser {
+    margin: auto;
+}
+
+.formerUser span {
+    color: var(--greenPrime);
+    text-decoration: underline;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="date"] {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #8e8e8e;
+}

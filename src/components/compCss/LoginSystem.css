@@ -1,0 +1,154 @@
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  height: 100%;
+  gap: 20px;
+}
+
+.passwordWrapper{
+  position: relative;
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  height: 100%;
+  gap: 30px;
+}
+
+.btnWrapper div{
+width: 100%;
+}
+
+.btnWrapper a{
+  text-decoration: underline;
+}
+
+.createUser a{
+  text-decoration: underline;
+  color: var(--greenAccent);
+}
+
+.btnWrapper div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.btnWrapper p{
+  font-size: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.inputWrapper svg{
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 4%;
+  cursor: pointer;
+  color: var(--greenPrime);
+}
+
+
+label {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  font-style: italic;
+}
+
+.inputField {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid var(--greenPrime);
+  border-radius: 5px;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  background-color: var(--white);
+}
+
+input::placeholder {
+  font-style: italic;
+  font-size: 16px;
+  color: #8e8e8e;
+}
+
+.loginBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switchWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: var(--greenSec);
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  inset: 0;
+  background-color: var(--white);
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked+.slider {
+  background: var(--greenPrime);
+}
+
+.switch input:focus+.slider {
+  box-shadow: 0 0 1px var(--greenPrime);
+}
+
+.switch input:checked+.slider:before {
+  transform: translateX(20px);
+}

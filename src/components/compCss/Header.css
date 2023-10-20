@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headerWrapper{
+display: flex;
+justify-content: space-between;
+padding: 10px;
+background-color: var(--white);
+position: sticky;
+top: 0;
+width: 100%;
+overflow: hidden;
+transition: 0.5s;
+}
+
+.headerWrapper.deActive{
+    top: -55px;
+    transition: 0.5s;
+}
+
+.headerWrapper img{
+    width: 75px;
+}

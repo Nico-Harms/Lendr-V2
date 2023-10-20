@@ -1,0 +1,222 @@
+import { useEffect, useState } from "react";
+import imgPlaceholder from "../assets/images/rectangle.svg";
+import "../components/compCss/Postform.css";
+import { getDatabase, ref, push, set } from 'firebase/database';
+
+
+
+export default function PostForm({ savePost, post }) {
+    const [title, setTitle] = useState("");
+    const [image, setImage] = useState("");
+    const [imageFile, setImageFile] = useState("");
+    const [size, setSize] = useState("");
+    const [quality, setQuality] = useState("");
+    const [color, setColor] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const [price, setPrice] = useState("");
+    const [notice, setNotice] = useState("");
+
+    useEffect(() => {
+        if (post) {
+            setTitle(post.title);
+            setImage(post.image);
+            setPrice(post.price);
+            setQuality(post.quality);
+            setSize(post.size);
+            setColor(post.color);
+            setNotice(post.notice);
+        }
+    }, [post]);
+
+    function handleImageChange(event) {
+        const file = event.target.files[0];
+        if (file.size < 500000) {
+            setImageFile(file);
+            const reader = new FileReader();
+            reader.onload = event => {
+                setImage(event.target.result);
+            };
+            reader.readAsDataURL(file);
+            setErrorMessage("");
+        } else {
+            setErrorMessage("The image file must be below 0.5 MB");
+        }
+    }
+
+    async function uploadImage() {
+        const url = `https://firebasestorage.googleapis.com/v0/b/nico-test-589d5.appspot.com/o/${imageFile.name}`;
+        const response = await fetch(url, {
+            method: "POST",
+            body: imageFile,
+            headers: { "Content-Type": imageFile.type }
+        });
+        const data = await response.json();
+        console.log(data);
+        const imageUrl = `${url}?alt=media`;
+        return imageUrl;
+    }
+
+    async function handleSubmit(event) {
+        console.log("handleSubmit called");
+        event.preventDefault();
+        const imageUrl = await uploadImage();
+        const formData = {
+          title: title,
+          image: imageUrl,
+          price: price,
+          quality: quality,
+          size: size,
+          color: color,
+          notice: notice
+        };
+      
+        // Assuming you have a reference to your Firebase database
+        const database = getDatabase();
+        const postsRef = ref(database, 'posts');
+      
+        const newPostRef = push(postsRef); // Creates a new child node with a unique key
+        const postKey = newPostRef.key;
+      
+        const postData = {
+          title: formData.title,
+          image: formData.image,
+          uid: "fTs84KRoYw5pRZEWCq2Z",
+          details: {
+            size: formData.size,
+            quality: formData.quality,
+            color: formData.color,
+            price: formData.price,
+            notice: formData.notice
+          }
+        };
+      
+        // Set the data to the newly created node
+        set(newPostRef, postData);
+      
+        savePost(formData);
+      }
+    
+    return (
+        <form className="postformWrapper" onSubmit={handleSubmit}>
+            <h1 className="postformH1">Indtast Oplysninger</h1>
+            <div className="test">
+                <label className="postformLabel">
+                    <input type="file" className="file-input" accept="image/*" onChange={handleImageChange} />
+                    <img className="image-preview" src={image} alt="Choose" onError={event => (event.target.src = imgPlaceholder)} />
+                </label>
+                <div className="input-container">
+                    <label className="postformLabel" htmlFor="brand">Mærke på kuffert</label>
+                    <input name="brand" className="postformInput" type="text" value={title} placeholder="Indtast mærke på kuffert.." onChange={e => setTitle(e.target.value)} />
+                </div>
+                <div className="input-container">
+                    <label className="postformLabel" htmlFor="size">Størrelse</label>
+                    <select className="postformSelect" name="size" value={size} onChange={e => setSize(e.target.value)}>
+                        <option value="">Størrelse... (S - XXL)</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                </div>
+                <div className="input-container">
+                    <label className="postformLabel" htmlFor="quality">Tilstand</label>
+                    <select className="postformSelect" name="quality" value={quality} onChange={e => setQuality(e.target.value)}>
+                        <option value="">Vælg tilstand</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+
+                <div className="color-wrapper">
+                    <label className="color-label" htmlFor="colors">Farver </label>
+                    <div className="color-container">
+                        <div className="color-inputs">
+                            <label className="color-box color-black">
+                            <input type="radio" name="color" value="black" onChange={() => setColor("black")} checked={color === "black"} />
+                            </label>
+
+
+                            <label className="color-box color-white">
+                                <input type="radio" name="color" value="white" onClick={() => setColor("white")} checked={color === "white"} />
+                            </label>
+
+                            <label className="color-box color-gray">
+                                <input type="radio" name="color" value="gray" onClick={() => setColor("gray")} checked={color === "gray"} />
+                            </label>
+
+                            <label className="color-box color-red">
+                                <input type="radio" name="color" value="red" onClick={() => setColor("red")} checked={color === "red"} />
+                            </label>
+
+                            <label className="color-box color-orange">
+                                <input type="radio" name="color" value="orange" onClick={() => setColor("orange")} checked={color === "orange"} />
+                            </label>
+
+                            <label className="color-box color-yellow">
+                                <input type="radio" name="color" value="yellow" onClick={() => setColor("yellow")} checked={color === "yellow"} />
+                            </label>
+
+                            <label className="color-box color-pink">
+                                <input type="radio" name="color" value="pink" onClick={() => setColor("pink")} checked={color === "pink"} />
+                            </label>
+
+                            <label className="color-box color-cyan">
+                                <input type="radio" name="color" value="cyan" onClick={() => setColor("cyan")} checked={color === "cyan"} />
+                            </label>
+
+                            <label className="color-box color-brown">
+                                <input type="radio" name="color" value="brown" onClick={() => setColor("brown")} checked={color === "brown"} />
+                            </label>
+
+                            <label className="color-box color-blue">
+                                <input type="radio" name="color" value="blue" onClick={() => setColor("blue")} checked={color === "blue"} />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="input-container">
+                    <label htmlFor="price">Lejepris pr. dag</label>
+                    <input name="price" type="text" value={price} placeholder="Lejepris pr. dag i kr." onChange={e => setPrice(e.target.value)} />
+                </div>
+                <div className="input-notice">
+                    <label htmlFor="notice">Bemærkning(er)</label>
+                    <textarea name="notice" className="input-con postformInput" type="text" value={notice} placeholder="Eventuelle bemærkninger skrives her.." onChange={e => setNotice(e.target.value)} />
+                </div>
+
+                <div className="text-box">
+                    <p className="text-h2">Udregning af depositum</p>
+                    <p className="text-p">
+                        Dit depositum bliver udregnet automatisk afhængigt af din lejepris, og dage det bliver udlejet -{" "}
+                        <u> Klik her for at se mere</u>
+                    </p>
+                </div>
+                <hr className="postformHr" />
+
+                <div className="switchWrapper">
+                    <label className="switch">
+                        <input type="checkbox" />
+                        <span className="slider"></span>
+                    </label>
+                    <p>Accepter Handelsbetingleser</p>
+                </div>
+
+                <p className="text-error">{errorMessage}</p>
+                <div className="botton-box">
+                    <button className="postformButton" type="submit">Opret</button>
+                </div>
+            </div>
+        </form>
+
+
+    );
+}

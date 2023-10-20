@@ -1,0 +1,135 @@
+/* Kodet af Tobias */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --greenPrime: #72CA81;
+    --greenSec: #C4EECB;
+    --greenAccent: #389446;
+    --white: #FAFAFF;
+    --navy: #031926;
+}
+
+.navWrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--white);
+    border-top: var(--navy) .1px solid;
+    z-index: 1000;
+}
+
+body {
+    background-color: var(--white);
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.createWrapper {
+    width: 32px;
+    position: relative;
+}
+
+.createPost {
+    background-color: var(--greenPrime);
+    border: none;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: calc(50% - 35px);
+    bottom: calc(50% - 25px);
+    transition: 0.5s;
+
+}
+
+.createWrapper svg {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 15px);
+    transition: .5s ease-in-out;
+}
+
+.createPost.creating {
+    width: 900px;
+    height: 900px;
+    left: calc(50% - 450px);
+    bottom: calc(50% - 700px);
+    align-items: flex-start;
+    transition: .5s ease-in-out;
+}
+
+.createWrapper svg.creating {
+    rotate: 45deg;
+    scale: 1.2;
+    transition: .5s ease-in-out;
+   
+}
+
+
+
+.img-wrapper {
+    width: 70px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5s ease-in-out;
+    opacity: 0;
+}
+
+.img-wrapper.creating{
+    opacity: 1;
+    transition: .5s ease-in-out;
+    transition-delay: .2s;
+}
+
+.img-wrapper p{
+    color: var(--white);
+}
+
+.img-wrapper:nth-child(1) {
+    top: 100px;
+    left: 20px;
+}
+
+.img-wrapper:nth-child(2) {
+    top: 50px;
+    left: calc(50% - 35px);
+}
+
+.img-wrapper:nth-child(3) {
+    top: 100px;
+    right: 20px;
+}
+
+.category-wrapper{
+    overflow: hidden;
+    position: absolute;
+    bottom: -250px;
+    left: -46vw;
+    height: 200px;
+    width: 100vw;
+    transition: 0s;
+}
+
+.category-wrapper.creating{
+    bottom: 40px;
+    left: -46vw;
+    transition: 0s ease-in-out;
+}
