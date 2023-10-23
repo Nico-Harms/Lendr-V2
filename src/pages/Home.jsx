@@ -7,7 +7,6 @@ export default function Home() {
 
     // Import of userdata from LocalUserData.jsx, and use of useEffect to use the data in the component
     const userData = LocalUserData();
-    console.log(userData.email);
 
 
     return (
