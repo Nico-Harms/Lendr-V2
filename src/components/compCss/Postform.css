@@ -130,6 +130,7 @@ form .file-input {
     -webkit-overflow-scrolling: touch;
     width: 160%;
     align-items: center;
+    height: 50px;
 }
 
 .color-inputs::-webkit-scrollbar {
@@ -155,8 +156,11 @@ form .file-input {
     transition: transform 0.2s;
 }
 
+
 .color-box:hover {
-    transform: scale(1.1);
+    filter: drop-shadow(1px 0px 5px rgba(0, 0, 0, 0.4)); /* Adjust the opacity value (0.5 in this case) */
+    transition: 0.2s ease-in;
+
 }
 
 /* Apply the same provided color styles */
