@@ -68,7 +68,7 @@ const SignupPage = () => {
                 phoneNumber,
                 birthday,
             };
-            localStorage.setItem('userData', JSON.stringify(formData));
+            sessionStorage.setItem('userData', JSON.stringify(formData));
             console.log(formData)
 
             navigate('/home');

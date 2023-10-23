@@ -57,7 +57,7 @@ const LoginSystem = () => {
 
       if (foundUser) {
         // Store the user's data in local storage
-        localStorage.setItem('userData', JSON.stringify(foundUser));
+        sessionStorage.setItem('userData', JSON.stringify(foundUser));
         console.log('User data stored in local storage:', foundUser);
       }
 

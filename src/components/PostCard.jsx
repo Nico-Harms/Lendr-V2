@@ -1,7 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import LocalUserData from "../components/LocalUserData";
 
 export default function PostCard({ post }) {
+
+  const userData = LocalUserData();
+  console.log(userData);
+
   const navigate = useNavigate();
 
   function handleClick() {
@@ -17,6 +22,7 @@ export default function PostCard({ post }) {
       <p>Color: {post.color}</p>
       <p>Price: {post.price}</p>
       <p>Notice: {post.notice}</p>
+      <p>Location: {userData.address}</p>
     </article>
   );
 }
