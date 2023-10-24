@@ -35,7 +35,6 @@ const handleSignIn = async (e) => {
     try {
       const userSnapshot = await getDoc(userRef);
     
-      console.log('User Snapshot Exists:', userSnapshot.exists()); // For debugging
     
       if (!userSnapshot.exists()) {
         navigate('/signup', {

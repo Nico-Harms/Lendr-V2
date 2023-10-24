@@ -100,6 +100,9 @@
     color: rgb(175, 175, 175);
 } */
 
+.filter-wrapper {
+    width: 100%;
+}
 
 .filter-sort-wrapper {
     display: flex;

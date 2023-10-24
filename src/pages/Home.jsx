@@ -1,17 +1,37 @@
 import LocalUserData from "../components/LocalUserData";
-
-
+import { useState, useEffect } from "react";
+import PostCard from "../components/PostCard";
+import Filter from "../components/Filter";
 
 
 export default function Home() {
-
-    // Import of userdata from LocalUserData.jsx, and use of useEffect to use the data in the component
+    const [posts, setPosts] = useState([]);
     const userData = LocalUserData();
 
+    useEffect(() => {
+        async function getPosts() {
+            const url = "https://nico-test-589d5-default-rtdb.europe-west1.firebasedatabase.app/posts.json";
+            const response = await fetch(url);
+            const data = await response.json();
+            const postsArray = Object.keys(data).map(key => ({ id: key, ...data[key] })); // from object to array
+            setPosts(postsArray);
+        }
+        getPosts();
+    }, []);
 
     return (
-        <section>
-            <h2>Opslag nær dig </h2>
-        </section>
+        
+        <main className="page">
+            <h3>Tilpas din søgning</h3>
+                        <Filter />
+
+            <section className="grid-container postCardDisplaySection">
+
+                {posts.map(post => (
+                    <PostCard post={post} key={post.id} />
+                ))}
+            </section>
+        </main>
+
     );
 }

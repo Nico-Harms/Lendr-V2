@@ -15,10 +15,8 @@ export default function Header() {
 
         if (scrollDirection === "down") {
             headerWrapper.classList.add("deActive");
-            console.log("down");
         } else if (scrollDirection === "up") {
             headerWrapper.classList.remove("deActive");
-            console.log("up");
         }
 
         // Check the pathname and set display to none for '/home'

@@ -11,8 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignUpPage";
 import Home from "./pages/Home";
 import Header from "./components/header";
-import Logud from "./pages/Logud";
-
+import CreatePostPage from './pages/CreatePostPage';
 
 
 export default function App() {
@@ -28,8 +27,8 @@ export default function App() {
         <Route path="/profil" element={<Profil />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Logud />} />
-      </Routes>
+        <Route path="/createpost" element={<CreatePostPage />} />
+        </Routes>
     </>
   );
 }

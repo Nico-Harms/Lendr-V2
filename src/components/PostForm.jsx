@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import imgPlaceholder from "../assets/images/rectangle.svg";
 import "../components/compCss/Postform.css";
 import { getDatabase, ref, push, set } from 'firebase/database';
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 
@@ -15,6 +16,7 @@ export default function PostForm({ savePost, post }) {
     const [errorMessage, setErrorMessage] = useState("");
     const [price, setPrice] = useState("");
     const [notice, setNotice] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (post) {
@@ -55,46 +57,52 @@ export default function PostForm({ savePost, post }) {
         const imageUrl = `${url}?alt=media`;
         return imageUrl;
     }
-
     async function handleSubmit(event) {
-        console.log("handleSubmit called");
         event.preventDefault();
+
+        if (!title || !image || !price || !quality || !size || !color || !notice) {
+            alert("Venligst udfyld alle felter");
+            return;
+        }
+
         const imageUrl = await uploadImage();
         const formData = {
-          title: title,
-          image: imageUrl,
-          price: price,
-          quality: quality,
-          size: size,
-          color: color,
-          notice: notice
+            title: title,
+            image: imageUrl,
+            price: price,
+            quality: quality,
+            size: size,
+            color: color,
+            notice: notice,
         };
-      
-        // Assuming you have a reference to your Firebase database
+
         const database = getDatabase();
         const postsRef = ref(database, 'posts');
-      
-        const newPostRef = push(postsRef); // Creates a new child node with a unique key
+
+        const newPostRef = push(postsRef);
         const postKey = newPostRef.key;
-      
+
         const postData = {
-          title: formData.title,
-          image: formData.image,
-          uid: "fTs84KRoYw5pRZEWCq2Z",
-          details: {
-            size: formData.size,
-            quality: formData.quality,
-            color: formData.color,
-            price: formData.price,
-            notice: formData.notice
-          }
+            title: formData.title,
+            image: formData.image,
+            uid: "fTs84KRoYw5pRZEWCq2Z",
+            details: {
+                size: formData.size,
+                quality: formData.quality,
+                color: formData.color,
+                price: formData.price,
+                notice: formData.notice,
+            },
         };
-      
-        // Set the data to the newly created node
+
         set(newPostRef, postData);
-      
+
         savePost(formData);
-      }
+
+        // Display a success message
+        alert('Opslag oprettet');
+        navigate('/home');
+        }
     
     return (
         <form className="postformWrapper" onSubmit={handleSubmit}>
