@@ -1,0 +1,13 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileEdit{
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-size: 20px;
+}
+
