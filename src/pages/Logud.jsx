@@ -15,13 +15,13 @@ export default function Logud() {
     }, []);
 
     return (
-        <section className="page">
+        <main className="page">
             <section className="grid-container">
                 {posts.map(post => (
                     <PostCard post={post} key={post.id} />
                 ))}
             </section>
-        </section>
+        </main>
 
     );
 }

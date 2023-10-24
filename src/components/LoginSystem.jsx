@@ -21,6 +21,20 @@ const LoginSystem = () => {
   const [eyeIcon, setEyeIcon] = useState(<EyeSlash size={32} />);
   const [users, setUsers] = useState([]);
 
+
+
+  useEffect(() => {
+    const autoLogin = () => {
+      const userData = localStorage.getItem('userData');
+      const checked = localStorage.getItem('checked');
+  
+      if (userData && checked === 'true') {
+        navigate('/home');
+      }
+    }
+    autoLogin();
+  }, []);
+
   useEffect(() => {
     const fetchUsers = async () => {
       const firestore = getFirestore(app);
@@ -81,6 +95,20 @@ const LoginSystem = () => {
     setEyeIcon(showPassword ? <EyeSlash size={32} /> : <Eye size={32} />);
   };
 
+  const rememberMe = () => {
+    const switchInput = document.querySelector('.switchInput');
+    if (switchInput.checked) {
+      localStorage.setItem('checked', true);
+      console.log('checked');
+    } else {
+      switchInput.checked = false;
+      localStorage.setItem('checked', false);
+      console.log('unchecked');
+    }
+  }
+  
+
+
   return (
     <>
       <div className='loginWrapper'>
@@ -107,7 +135,7 @@ const LoginSystem = () => {
         </div>
         <div className="switchWrapper">
           <label className="switch">
-            <input type="checkbox" />
+            <input className='switchInput' type="checkbox" onChange={rememberMe} />
             <span className="slider"></span>
           </label>
           <p>Husk mig</p>
