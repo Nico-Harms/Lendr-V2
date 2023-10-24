@@ -9,3 +9,47 @@
     height: 100%;
     object-fit: cover;
 }
+
+.postCard {
+    border: solid 2px var(--greenPrime);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.textInfoWrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.textInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.postCardDisplaySection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.iconwrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+.mapPinWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .7rem;
+}
+
+.postCardIcon {
+    color: var(--greenPrime);
+}
+

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PostCard from "../components/PostCard";
+
 export default function Logud() {
     const [posts, setPosts] = useState([]);
 
@@ -16,7 +17,7 @@ export default function Logud() {
 
     return (
         <main className="page">
-            <section className="grid-container">
+            <section className="grid-container postCardDisplaySection">
                 {posts.map(post => (
                     <PostCard post={post} key={post.id} />
                 ))}
