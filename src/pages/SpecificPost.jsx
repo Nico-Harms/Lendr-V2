@@ -26,14 +26,35 @@ export default function SpecificPost() {
     }
 
     return (
-        <div>
-            <h2>{post.title}</h2>
-            <img src={post.image} alt="" />
-            <p>Størrelse: {post.details.size}</p>
-            <p>Tilstand: {post.details.quality}</p>
-            <p>Pris pr. dag: {post.details.price}</p>
-            <p>Udlejer: {post.renterName}</p>
-            {/* Other post details can be displayed here */}
-        </div>
+        <main>
+          <div className="productpost">
+            <img className="imgpost" src={post.image} alt="" />
+            <h2 className="centered-h2">Kuffert Informationer</h2>
+            
+            <div className="text-container">
+  <div className="producttext">
+    <div className="column">
+      <div className="row">
+        <p>Størrelse:</p>
+        <p>{post.details.size}</p>
+      </div>
+      <div className="row">
+        <p>Tilstand:</p>
+        <p>{post.details.quality}</p>
+      </div>
+      <div className="row">
+        <p>Pris pr. dag:</p>
+        <p>{post.details.price}</p>
+      </div>
+    </div>
+  </div>
+</div>
+            
+            </div>
+          <div className="renter-text">
+            <p><span className="bold-text">Udlejer:</span></p>
+            <p>{post.renterName}</p>
+          </div>
+        </main>
     );
 }
