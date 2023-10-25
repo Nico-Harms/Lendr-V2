@@ -7,6 +7,7 @@ export default function Profil() {
     const [showPassword, setShowPassword] = useState(false);
     const [eyeIcon, setEyeIcon] = useState(<EyeSlash size={32} />);
     const [password, setPassword] = useState('');
+    const [editMode, setEditMode] = useState(false); // State to track edit mode
     const userData = JSON.parse(sessionStorage.getItem('userData')) || {
         firstName: '',
         lastName: '',
@@ -16,11 +17,48 @@ export default function Profil() {
         birthday: '',
     };
 
+    const [editedFirstName, setEditedFirstName] = useState(userData.firstName);
+    const [editedLastName, setEditedLastName] = useState(userData.lastName);
+    const [editedEmail, setEditedEmail] = useState(userData.email);
+    const [editedPhoneNumber, setEditedPhoneNumber] = useState(userData.phoneNumber);
+    const [editedAddress, setEditedAddress] = useState(userData.address);
+    const [editedBirthday, setEditedBirthday] = useState(userData.birthday);
+    // Add similar state variables for other fields as needed.
+
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
         setEyeIcon(showPassword ? <EyeSlash size={32} /> : <Eye size={32} />);
     };
+
+    const handleEditClick = () => {
+        setEditMode(!editMode);
+        // Store the current values for editing
+        setEditedFirstName(userData.firstName);
+        setEditedLastName(userData.lastName);
+        setEditedEmail(userData.email);
+        setEditedPhoneNumber(userData.phoneNumber);
+        setEditedAddress(userData.address);
+        setEditedBirthday(userData.birthday);
+        // Set similar values for other fields.
+    };
+
+    const handleSaveClick = () => {
+        // Save the new information to your data source (e.g., sessionStorage)
+        // Update userData with the new values, then save it to sessionStorage
+        userData.firstName = editedFirstName;
+        userData.lastName = editedLastName;
+        userData.email = editedEmail;
+        userData.phoneNumber = editedPhoneNumber;
+        userData.address = editedAddress;
+        userData.birthday = editedBirthday;
+        sessionStorage.setItem('userData', JSON.stringify(userData));
+        setEditMode(false);
+    };
+
+
+
+    
 
     return (
         <main>
@@ -28,19 +66,20 @@ export default function Profil() {
                 <h2>Din Profil</h2>
                 <UserCirclePlus size={100} weight="light" />
             </div>
-            <div className="profileEdit">
+            <div className="profileEdit" onClick={handleEditClick}>
                 <PencilSimpleLine size={32} weight="light" />
-                <p>Rediger Oplysninger</p>
+                <p>{editMode ? 'Annuller' : 'Rediger Oplysninger'}</p>
             </div>
             <div className='inputWrapper'>
                 <label>Navn</label>
-                <input 
+                <input
                     className='inputField'
                     required
                     type="text"
                     placeholder="Navn"
-                    value={userData.firstName}
-                    readOnly
+                    value={editMode ? editedFirstName : userData.firstName}
+                    readOnly={!editMode}
+                    onChange={(e) => setEditedFirstName(e.target.value)}
                 />
             </div>
             <div className='inputWrapper'>
@@ -50,8 +89,9 @@ export default function Profil() {
                     required
                     type="text"
                     placeholder="Efternavn(e)"
-                    value={userData.lastName}
-                    readOnly
+                    value={editMode ? editedLastName : userData.lastName}
+                    readOnly={!editMode}
+                    onChange={(e) => setEditedLastName(e.target.value)}
                 />
             </div>
             <div className='inputWrapper'>
@@ -61,8 +101,9 @@ export default function Profil() {
                     required
                     type="email"
                     placeholder="Email"
-                    value={userData.email}
-                    readOnly
+                    value={editMode ? editedEmail : userData.email}
+                    readOnly={!editMode}
+                    onChange={(e) => setEditedEmail(e.target.value)}
                 />
             </div>
             <div className='inputWrapper'>
@@ -72,8 +113,9 @@ export default function Profil() {
                     required
                     type="number"
                     placeholder="+45 12 34 56 78"
-                    value={userData.phoneNumber}
-                    readOnly
+                    value={editMode ? editedPhoneNumber : userData.phoneNumber}
+                    readOnly={!editMode}
+                    onChange={(e) => setEditedPhoneNumber(e.target.value)}
                 />
             </div>
             <div className='inputWrapper'>
@@ -83,8 +125,9 @@ export default function Profil() {
                     required
                     type="text"
                     placeholder="Adressevej 47, 1111 Bynavn"
-                    value={userData.address}
-                    readOnly
+                    value={editMode ? editedAddress : userData.address}
+                    readOnly={!editMode}
+                    onChange={(e) => setEditedAddress(e.target.value)}
                 />
             </div>
             <div className='inputWrapper'>
@@ -92,10 +135,14 @@ export default function Profil() {
                 <input 
                     className='inputField' 
                     type="date" 
-                    value={userData.birthday} 
-                    readOnly
+                    value={editMode ? editedBirthday : userData.birthday} 
+                    readOnly={!editMode}
+                    onChange={(e) => setEditedBirthday(e.target.value)}
                 />
             </div>
+            {editMode && (
+                <button className="saveButton" onClick={handleSaveClick}>Gem Oplysninger</button>
+            )}
             <div className="profileEdit">
                 <PencilSimpleLine size={32} weight="light" />
                 <p>Rediger Adgangskode</p>

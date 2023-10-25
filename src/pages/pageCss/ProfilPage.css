@@ -11,3 +11,16 @@
     font-size: 20px;
 }
 
+.saveButton{
+    display: flex;
+    align-items: center;
+    border-radius:30px;
+    border: none;
+    background-color: var(--greenPrime);
+    padding: 20px;
+    gap: 10px;
+    height: 50px;
+    width: 60%;
+    justify-content: center;
+    font-size: 16px;
+}
