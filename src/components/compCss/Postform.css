@@ -31,7 +31,8 @@
     box-sizing: border-box;
     display: block;
     border-radius: 5px;
-    border: #72CA81 2px solid;
+    border: #72CA81 1px solid;
+    background-color: var(--white);
 }
 
 
@@ -56,8 +57,9 @@
     padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;
-    border: #72CA81 2px solid;
+    border: #72CA81 1px solid;
     height: 100px;
+    background-color: var(--white);
     
 }
 .input-container label {
@@ -70,17 +72,40 @@
     padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;
-    border: #72CA81 2px solid;
+    border: #72CA81 1px solid;
+    background-color: var(--white);
 }
 .image-preview {
-    width: calc(85%);
     max-width: 346px;
     height: 150px;
-    object-fit: cover;
     margin: 0.5em auto;
-    display: block;
     cursor: pointer;
     margin-bottom: 20px;
+    border: 1px solid var(--greenPrime);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mascotChooseImg{
+    position: absolute;
+    right: -90px;
+    width: 250px;
+    rotate: -30deg;
+    top: 10px;
+}
+
+.planeChooseImg{
+    position: absolute;
+    width: 180px;
+    left: -70px;
+    top: -10px;
+ 
 }
 
 form .file-input {
@@ -142,7 +167,7 @@ form .file-input {
 
 .color-box {
     width: 30px; /* Increase the width to make the circles wider */
-    height: 25px; /* Adjust the height as needed */
+    height: 30px; /* Adjust the height as needed */
     display: flex;
     align-items: center;
     justify-content: center;

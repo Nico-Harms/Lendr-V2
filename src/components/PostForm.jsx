@@ -3,6 +3,8 @@ import imgPlaceholder from "../assets/images/rectangle.svg";
 import "../components/compCss/Postform.css";
 import { getDatabase, ref, push, set } from 'firebase/database';
 import { Navigate, useNavigate } from "react-router-dom";
+import mascot from "../assets/images/maskot-04.svg"
+import plane from "../assets/images/planeChooseImg.svg"
 
 
 
@@ -102,15 +104,20 @@ export default function PostForm({ savePost, post }) {
         // Display a success message
         alert('Opslag oprettet');
         navigate('/home');
-        }
-    
+    }
+
     return (
         <form className="postformWrapper" onSubmit={handleSubmit}>
             <h1 className="postformH1">Indtast Oplysninger</h1>
             <div className="test">
                 <label className="postformLabel">
                     <input type="file" className="file-input" accept="image/*" onChange={handleImageChange} />
-                    <img className="image-preview" src={image} alt="Choose" onError={event => (event.target.src = imgPlaceholder)} />
+                    <div className="image-preview" src={image} alt="Choose" onError={event => (event.target.src)} >
+                        <img src={mascot} alt="Mascot" className="mascotChooseImg" />
+                        <img src={plane} alt="plane" className="planeChooseImg" />
+                        <p>Billede mangler</p>
+                        <p>Klik her for at tilføje</p>
+                    </div>
                 </label>
                 <div className="input-container">
                     <label className="postformLabel" htmlFor="brand">Mærke på kuffert</label>
@@ -149,7 +156,7 @@ export default function PostForm({ savePost, post }) {
                     <div className="color-container">
                         <div className="color-inputs">
                             <label className="color-box color-black">
-                            <input type="radio" name="color" value="black" onChange={() => setColor("black")} checked={color === "black"} />
+                                <input type="radio" name="color" value="black" onChange={() => setColor("black")} checked={color === "black"} />
                             </label>
 
 
