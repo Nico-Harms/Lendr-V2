@@ -73,7 +73,8 @@ const GoogleSignInButton = () => {
           });
         } else {
 
-          const foundUser = users.find(user => user.email === user.email);
+          const foundUser = users.find(existingUser => existingUser.email === user.email);
+
 
           if (foundUser) {
             // Store the user's data in local storage
