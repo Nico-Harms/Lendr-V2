@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import imgPlaceholder from "../assets/images/rectangle.svg";
 import "../components/compCss/Postform.css";
 import { getDatabase, ref, push, set } from 'firebase/database';
 import { Navigate, useNavigate } from "react-router-dom";
 import mascot from "../assets/images/maskot-04.svg"
 import plane from "../assets/images/planeChooseImg.svg"
+import LocalUserData from "../components/LocalUserData";
 
 
 
 export default function PostForm({ savePost, post }) {
+    const userData = LocalUserData();
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [imageFile, setImageFile] = useState("");
@@ -18,6 +19,7 @@ export default function PostForm({ savePost, post }) {
     const [errorMessage, setErrorMessage] = useState("");
     const [price, setPrice] = useState("");
     const [notice, setNotice] = useState("");
+    const [renterName, setRenterName] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -29,6 +31,7 @@ export default function PostForm({ savePost, post }) {
             setSize(post.size);
             setColor(post.color);
             setNotice(post.notice);
+            setRenterName(post.renterName);
         }
     }, [post]);
 
@@ -88,6 +91,7 @@ export default function PostForm({ savePost, post }) {
             title: formData.title,
             image: formData.image,
             uid: "fTs84KRoYw5pRZEWCq2Z",
+            renterName: userData.firstName,
             details: {
                 size: formData.size,
                 quality: formData.quality,

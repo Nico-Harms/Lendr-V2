@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams
+import "../pages/pageCss/SpecificPost.css";
 
 export default function SpecificPost() {
     const { postId } = useParams(); // Get postId from the URL
@@ -27,9 +28,11 @@ export default function SpecificPost() {
     return (
         <div>
             <h2>{post.title}</h2>
+            <img src={post.image} alt="" />
             <p>Størrelse: {post.details.size}</p>
             <p>Tilstand: {post.details.quality}</p>
             <p>Pris pr. dag: {post.details.price}</p>
+            <p>Udlejer: {post.renterName}</p>
             {/* Other post details can be displayed here */}
         </div>
     );
