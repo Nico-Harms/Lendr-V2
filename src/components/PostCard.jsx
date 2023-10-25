@@ -22,9 +22,9 @@ export default function PostCard({ post }) {
       <div className='textInfoWrapper'>
         <div className='textInfo'>
           <h3>{post.title}</h3>
-          <p>Størrelse: {post.size}</p>
-          <p>Tilstand: {post.quality}</p>
-          <p>Pris pr. dag: {post.price}</p>
+          <p>Størrelse: {post.details.size}</p>
+          <p>Tilstand: {post.details.quality}</p>
+          <p>Pris pr. dag: {post.details.price}</p>
         </div>
         <div className="iconwrapper">
           <div className='mapPinWrapper'>
