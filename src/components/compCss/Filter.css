@@ -1,105 +1,3 @@
-/* .filter-sort-wrapper {
-    display: flex;
-    background-color: var(--white);
-    width: 100%;
-    height: 50px;
-}
-
-.filter-sort-wrapper .sort,
-.filter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    padding: 0 20px;
-    border-bottom: 1px solid var(--navy);
-}
-
-.sort {
-    border-right: 1px solid var(--navy);
-}
-
-
-.filter-sort-wrapper p {
-    font-size: 24px;
-    font-style: italic;
-}
-
-.filter-wrapper{
-    position: relative;
-}
-
-.sort-dropdown,
-.filter-dropdown {
-    position: absolute;
-    width: 100%;
-    padding: 0 20px;
-    background-color: var(--white);
-    overflow: hidden;
-    height: 0px;
-    visibility: hidden;
-    transition: height 0.5s ease;
-}
-
-.sort-dropdown.active,
-.filter-dropdown.active {
-    visibility: visible;
-    height: 80vh;
-}
-
-.sort-dropdown p,
-.filter-dropdown p {
-    padding-top: 20px;
-    font-size: 20px;
-    font-style: italic;
-}
-
-.sort-dropdown div{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-.filter-dropdown div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.sort-dropdown hr,
-.filter-dropdown hr {
-    width: 100%;
-    margin: 0 auto;
-    border: .5px solid var(--navy);
-}
-
-
-.categories-wrapper{
-    display: flex;
-    justify-content: space-around;
-}
-
-.categories-wrapper img{
-    width: 80px;
-}
-
-.size-wrapper{
-    display: flex;
-    justify-content: space-around;
-}
-
-.size-wrapper p{
-    padding: 0;
-    font-style: normal;
-}
-
-.sizeLitre{
-    font-size: 12px;
-    font-style: italic;
-    color: rgb(175, 175, 175);
-} */
-
 .filter-wrapper {
     width: 100%;
 }
@@ -123,7 +21,7 @@
     font-style: italic;
 }
 
-.sort{
+.sort {
     border-right: 1px solid var(--navy);
     transition: 0.2s ease-in-out;
 }
@@ -155,7 +53,7 @@
     height: 80vh;
 }
 
-.sort section div{
+.sort section div {
     width: 90%;
     margin: 0 auto;
     padding: 20px 0px;
@@ -173,36 +71,67 @@
     gap: 50px;
 }
 
-.categories-wrapper{
+.categories-wrapper {
     display: flex;
     justify-content: space-around;
+    height: 120px;
 }
 
-.categories-wrapper img{
-    width: 80px;
+.categories-wrapper img {
+    width: 120px;
 }
 
-.size-wrapper{
+.size-wrapper {
     display: flex;
     gap: 20px;
 }
 
-.size-wrapper div{
+.size-wrapper div {
     display: flex;
     justify-content: center;
 }
 
-.size-wrapper p{
+.size-wrapper p {
     padding: 0;
     font-style: normal;
     font-size: 16px;
 }
 
-.sizeLitre{
+.sizeLitre {
     font-size: 10px;
     font-style: italic;
     color: rgb(175, 175, 175);
-} 
+}
 
 
-  
+
+.color-cont {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.color-cont .color-box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.color-cont::-webkit-scrollbar {
+    display: none;
+}
+
+.color-cont .color-box input {
+    position: absolute;
+    left: calc(50% - 5px);
+    top: calc(50% - 5px);
+    opacity: 0;
+}
+
+.small-text{
+    font-size: 12px;
+    color: rgb(168, 154, 154);
+    margin: 0 0 10px 15px;
+}

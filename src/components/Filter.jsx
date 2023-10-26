@@ -34,12 +34,12 @@ export default function Filter() {
     const toggleSortDropdown = () => {
         setIsSortOpen(!isSortOpen);
         setIsFilterOpen(false);
-      };
-    
-      const toggleFilterDropdown = () => {
+    };
+
+    const toggleFilterDropdown = () => {
         setIsFilterOpen(!isFilterOpen);
         setIsSortOpen(false);
-      };
+    };
 
     return (
         <>
@@ -51,7 +51,7 @@ export default function Filter() {
                         className="sort"
                         variants={containerVariants}>
                         <motion.button
-                            variants={ {
+                            variants={{
                                 open: { backgroundColor: "#72CA81", color: "#fafaff" },
                                 closed: { backgroundColor: "#fafaff", color: "#031926" },
                             }}
@@ -60,9 +60,9 @@ export default function Filter() {
                             Sorter
                             <motion.div
                                 variants={{
-                                    open: { rotateX: 180, y: -5, color: "#fafaff"},
+                                    open: { rotateX: 180, y: -5, color: "#fafaff" },
                                     closed: { rotateX: 0, y: 0, color: "#031926" },
-                                    
+
                                 }}
                                 transition={{ duration: 0.2 }}
 
@@ -121,10 +121,10 @@ export default function Filter() {
                         className="filter"
                         variants={containerVariants}>
                         <motion.button
-                         variants={ {
-                            open: { backgroundColor: "#72CA81", color: "#fafaff" },
-                            closed: { backgroundColor: "#fafaff", color: "#031926" },
-                        }}
+                            variants={{
+                                open: { backgroundColor: "#72CA81", color: "#fafaff" },
+                                closed: { backgroundColor: "#fafaff", color: "#031926" },
+                            }}
                             whileTap={{ scale: 0.97 }}
                             onClick={(toggleFilterDropdown)}>
                             Filtrer
@@ -201,7 +201,51 @@ export default function Filter() {
                                 </div>
                                 <hr />
                             </motion.div>
-                            <motion.div variants={itemVariants}> </motion.div>
+                            <motion.div className="color-picker" variants={itemVariants}>
+                                <p>Farve</p>
+                                <div className="color-cont">
+                                    <label className="color-box color-black">
+                                        <input type="radio" name="color" value="black" />
+                                    </label>
+                                    <label className="color-box color-white">
+                                        <input type="radio" name="color" value="white" />
+                                    </label>
+
+                                    <label className="color-box color-gray">
+                                        <input type="radio" name="color" value="gray" />
+                                    </label>
+
+                                    <label className="color-box color-red">
+                                        <input type="radio" name="color" value="red" />
+                                    </label>
+
+                                    <label className="color-box color-orange">
+                                        <input type="radio" name="color" value="orange" />
+                                    </label>
+
+                                    <label className="color-box color-yellow">
+                                        <input type="radio" name="color" value="yellow" />
+                                    </label>
+
+                                    <label className="color-box color-pink">
+                                        <input type="radio" name="color" value="pink" />
+                                    </label>
+
+                                    <label className="color-box color-cyan">
+                                        <input type="radio" name="color" value="cyan" />
+                                    </label>
+
+                                    <label className="color-box color-brown">
+                                        <input type="radio" name="color" value="brown" />
+                                    </label>
+
+                                    <label className="color-box color-blue">
+                                        <input type="radio" name="color" value="blue" />
+                                    </label>
+                                </div>
+                                <p className="small-text" >scroll til siden</p>
+                                <hr />
+                            </motion.div>
                             <motion.div variants={itemVariants}>Item 4 </motion.div>
                             <motion.div variants={itemVariants}>Item 5 </motion.div>
                         </motion.section>
