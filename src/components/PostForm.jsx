@@ -130,28 +130,22 @@ export default function PostForm({ savePost, post }) {
                 <div className="input-container">
                     <label className="postformLabel" htmlFor="size">Størrelse</label>
                     <select className="postformSelect" name="size" value={size} onChange={e => setSize(e.target.value)}>
-                        <option value="">Størrelse... (S - XXL)</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                        <option value="XXL">XXL</option>
+                        <option value="">Str (25L - 105L)</option>
+                        <option value="25 L">25 L</option>
+                        <option value="40 L">40 L</option>
+                        <option value="70 L">70 L</option>
+                        <option value="105 L">105 L</option>
                     </select>
                 </div>
                 <div className="input-container">
                     <label className="postformLabel" htmlFor="quality">Tilstand</label>
                     <select className="postformSelect" name="quality" value={quality} onChange={e => setQuality(e.target.value)}>
                         <option value="">Vælg tilstand</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="Meget brugt">Meget brugt</option>
+                        <option value="Brugt">Brugt</option>
+                        <option value="Lidt brugt">Lidt brugt</option>
+                        <option value="Som ny">Som ny</option>
+                        
                     </select>
                 </div>
 
