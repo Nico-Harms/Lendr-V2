@@ -5,9 +5,24 @@
 }
 
 .categoryOptionWrapper img{
-    width: 200px;
+    width: 200px;;
+}
+
+.categoryOptionWrapper {
+display: flex;
+flex-direction: column;
+align-items: center;;
 }
 
 .chooseCategoryMain {
-    gap: 0;
+    gap: 30px;
+}
+
+.chooseCategoryMain h2 {
+    font-size: 2rem;
+}
+
+.chooseCategoryMain p {
+    text-decoration: underline;
+    padding-bottom: 20px;
 }

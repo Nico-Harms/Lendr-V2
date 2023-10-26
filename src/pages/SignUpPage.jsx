@@ -80,7 +80,7 @@ const SignupPage = () => {
         sessionStorage.setItem('userData', JSON.stringify(formData));
         console.log(formData)   
 
-        navigate('/home');
+        navigate('/choosecategory');
       } else {
         // For regular signups
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -111,7 +111,7 @@ const SignupPage = () => {
         sessionStorage.setItem('userData', JSON.stringify(formData));
         console.log(formData);
 
-        navigate('/home');
+        navigate('/choosecategory');
       }
     } catch (error) {
       console.error('Error signing up:', error);
