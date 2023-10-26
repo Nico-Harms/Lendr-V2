@@ -27,6 +27,6 @@ export default function SendRequest() {
 
     return (
 
-        <main></main>
+        <main>Pik</main>
     )
 }

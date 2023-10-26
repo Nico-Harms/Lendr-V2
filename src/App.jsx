@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/SpecificPost";
 import ChooseCategory from "./pages/ChooseCategory";
+import SendRequest from "./pages/SendRequest";
 
 
 export default function App() {
