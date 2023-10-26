@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'; // Import useParams
+import { X, ArrowLeft } from "@phosphor-icons/react";
 
 export default function SendRequest() {
 
@@ -27,6 +28,17 @@ export default function SendRequest() {
 
     return (
 
-        <main>Pik</main>
+        <main>
+            <div className="arrowWrapper">
+                <ArrowLeft size={32} /><X size={32} />
+            </div>
+            <section className="rentPeriod">
+                <h3>Lejeperiode</h3>
+                <input type="date" name="" id="" />
+                <p>Aktuel pris:</p> <span></span>
+                <p>Depositum:</p> <span></span>
+            </section>
+            
+        </main>
     )
 }

@@ -69,11 +69,11 @@ h2 {
     text-decoration: underline;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+.inputWrapper input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
 }
 
-input[type="date"] {
+.inputWrapper input[type="date"] {
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-size: 16px;
