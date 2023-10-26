@@ -91,6 +91,7 @@ body {
     align-items: center;
     transition: .5s ease-in-out;
     opacity: 0;
+    text-decoration: none;
 }
 
 .img-wrapper.creating{
