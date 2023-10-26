@@ -14,7 +14,13 @@
     object-fit: cover;
 }
 
+.favoritTekst {
+    display:  flex;
+    align-items: center;
+    gap: 10px;
+}
 .postCard {
+
     border: solid 2px var(--greenPrime);
     border-radius: 20px;
     overflow: hidden;
