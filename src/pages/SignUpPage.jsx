@@ -160,7 +160,7 @@ const SignupPage = () => {
 
         <div className='inputWrapper'>
           <label htmlFor="address">Adresse</label>
-          <input placeholder='Indtast adresse' className='inputField' type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+          <input placeholder='Indtast postnummer' className='inputField' type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
         </div>
 
         <div className='inputWrapper'>
