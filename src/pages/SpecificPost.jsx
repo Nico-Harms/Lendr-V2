@@ -83,7 +83,7 @@ export default function SpecificPost() {
        <p>tryk her for at sende besked til udlejer</p>
        </div>
        
-      <button onClick={handleClick}>Vælg lejeperiode</button>
+      <button className='button-rent' onClick={handleClick}>Vælg lejeperiode</button>
     </main>
   );
 }

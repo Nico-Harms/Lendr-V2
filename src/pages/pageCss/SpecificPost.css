@@ -18,7 +18,7 @@
 
 .imgpost {
   width: 100%;
-  height: 30%;
+  height: 20%;
   object-fit: cover;
 }
 
@@ -83,7 +83,7 @@
 
 .textarea-container {
   margin: 0.5em auto;
-  width: 85%;
+  width: 90%;
   max-width: 350px;
   display: flex;
   flex-direction: column;
@@ -96,8 +96,9 @@
   box-sizing: border-box;
   border-radius: 5px;
   border: #72CA81 1px solid;
-  height: 100px;
+  height: 150px;
   background-color: var(--white);
+  font-size: 15px;
 }
 
 .chat-con {
@@ -109,4 +110,17 @@
 .chat-con p {
   color: #7F8992;
   font-size: 14px;
+}
+
+.button-rent {
+  background-color: #72CA81;
+  border: none;
+  border-radius: 20px;
+  color: #000000;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 auto;
+  font-size: bold;
 }
