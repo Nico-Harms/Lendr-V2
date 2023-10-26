@@ -43,8 +43,12 @@ export default function SpecificPost() {
         <p>{post.details.quality}</p>
       </div>
       <div className="row">
-        <p>Pris pr. dag:</p>
+        <p>Dagspris:</p>
         <p>{post.details.price}</p>
+      </div>
+      <div className="row">
+        <p>Mærke:</p>
+        <p>{post.title}</p>
       </div>
     </div>
   </div>
