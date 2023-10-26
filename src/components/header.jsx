@@ -10,6 +10,10 @@ export default function Header() {
     const scrollDirection = useScrollDirection();
     const location = useLocation(); // Get the current location
 
+    const goToHome = () => {
+        window.location.href = '/home';
+    }
+
     useEffect(() => {
         const headerWrapper = headerWrapperRef.current;
 
@@ -30,7 +34,7 @@ export default function Header() {
 
     return (
         <div ref={headerWrapperRef} className='headerWrapper'>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" onClick={goToHome} />
             <PaperPlaneTilt size={32} weight='light' />
         </div>
     );

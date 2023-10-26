@@ -11,7 +11,11 @@ import Header from "./components/Header";
 import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/SpecificPost";
 import ChooseCategory from "./pages/ChooseCategory";
+<<<<<<< Updated upstream
 import SendRequest from "./pages/SendRequest";
+=======
+import AcceptedDeal from "./pages/AcceptedDeal";
+>>>>>>> Stashed changes
 
 
 export default function App() {
@@ -31,6 +35,7 @@ export default function App() {
         <Route path="/home/posts/:postId" element={<SpecificPost />} />
         <Route path="/sendrequest/:postId" element={<SendRequest />} />
         <Route path="/choosecategory" element={<ChooseCategory />} />
+        <Route path="/accepteddeal" element={<AcceptedDeal />} />
       </Routes>
     </>
   );
