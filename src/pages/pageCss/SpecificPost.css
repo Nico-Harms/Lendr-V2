@@ -34,7 +34,7 @@
   font-weight: bold;
 }
 
-.renter-text {
+.renter {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,7 +45,7 @@
 .row {
   display: flex;
   justify-content: space-between;
-  gap: 140px;
+ 
   width: 100%;
   border-bottom: 1px solid #000000;
 }
@@ -56,7 +56,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  
+  width: 100%;
 }
 
 .row p {
@@ -71,5 +71,6 @@
   display: flex;
     justify-content: end;
     margin-top: 5px;
+    padding: 0 20px 0 0;
 }
 

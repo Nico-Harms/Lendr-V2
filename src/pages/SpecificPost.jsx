@@ -31,7 +31,6 @@ export default function SpecificPost() {
             <img className="imgpost" src={post.image} alt="" />
             <h2 className="centered-h2">Kuffert Informationer</h2>
             
-            <div className="text-container">
   <div className="producttext">
     <div className="column">
       <div className="row">
@@ -52,15 +51,18 @@ export default function SpecificPost() {
       </div>
     </div>
   </div>
-</div>
 <div>
   <p className='address'>{post.address}</p>
 </div>
             
             </div>
-          <div className="renter-text">
-            <p><span className="bold-text">Udlejer:</span></p>
+          <div className="renter">
+            <p><span className="bold-text">Udlejer: </span></p>
+            
             <p>{post.renterName}</p>
+            <div className="star-icon">
+
+            </div>
           </div>
         </main>
     );
