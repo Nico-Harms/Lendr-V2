@@ -4,6 +4,7 @@ import { House, HeartStraight, BagSimple, UserCircle, Plus } from "@phosphor-ico
 import bagsSmall from '../assets/images/category-bags.svg'
 import suitcasesSmall from '../assets/images/category-suitcases.svg'
 import otherSmall from '../assets/images/category-other.svg'
+import { useEffect } from "react";
 
 
 // Kodet af Tobias
@@ -25,7 +26,16 @@ export default function Navigation() {
       category.classList.toggle('creating');
     })
   }
-
+useEffect(() => {
+  const navWrapper = document.querySelector('.navWrapper');
+  // Check the pathname and set display to none for '/home'
+  if (location.pathname === '/' || location.pathname === '/signup') {
+    navWrapper.style.display = 'none';
+  } else {
+    navWrapper.style.display = 'flex'; // Show for other paths
+  }
+}
+, [location.pathname]);
 
   return (
     <div className="navWrapper">

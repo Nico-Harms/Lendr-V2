@@ -152,3 +152,36 @@ input::placeholder {
 .switch input:checked+.slider:before {
   transform: translateX(20px);
 }
+
+.main {
+    position: relative;
+}
+
+.loginVid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 100;
+}
+
+.loginVid::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeOut 3s; /* Adjust the duration as needed */
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
