@@ -50,7 +50,7 @@
     /* left: calc(50% - 45%); */
     left: 0;
     background-color: var(--white);
-    height: 80vh;
+    height: 100vh;
 }
 
 .sort section div {
@@ -74,11 +74,12 @@
 .categories-wrapper {
     display: flex;
     justify-content: space-around;
-    height: 120px;
+    height: 100px;
+    gap: 20px;
 }
 
 .categories-wrapper img {
-    width: 120px;
+    width: 60px;
 }
 
 .size-wrapper {
@@ -135,3 +136,49 @@
     color: rgb(168, 154, 154);
     margin: 0 0 10px 15px;
 }
+
+
+
+
+/* Custom styles for the price range slider */
+.price-range-slider {
+    width: 100%;
+    position: relative;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--navy);
+    outline: none;
+    border-radius: 20px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--greenPrime);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider-value {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .min-value {
+    flex: 1;
+  }
+  
+  .max-value {
+    flex: 1;
+    text-align: right;
+  }
+  

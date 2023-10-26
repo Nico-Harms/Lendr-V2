@@ -22,7 +22,6 @@ export default function Home() {
     return (
         
         <main className="page">
-            <h3>Tilpas din søgning</h3>
                         <Filter />
 
             <section className="grid-container postCardDisplaySection">

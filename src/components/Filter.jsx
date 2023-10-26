@@ -1,10 +1,10 @@
 import { motion } from "framer-motion"
-import './compCss/Filter.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SlidersHorizontal, SortAscending } from "@phosphor-icons/react";
 import bagsFilter from '../assets/images/kategori-taske.svg'
 import suitcaseFilter from '../assets/images/kategori-kuffert.svg'
 import otherFilter from '../assets/images/kategori-ass.svg'
+import './compCss/Filter.css';
 
 
 
@@ -30,6 +30,8 @@ export default function Filter() {
 
     const [isSortOpen, setIsSortOpen] = useState(false);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [sliderValue, setSliderValue] = useState(0);
+    const [distanceSliderValue, setDistanceSliderValue] = useState(0);
 
     const toggleSortDropdown = () => {
         setIsSortOpen(!isSortOpen);
@@ -39,6 +41,14 @@ export default function Filter() {
     const toggleFilterDropdown = () => {
         setIsFilterOpen(!isFilterOpen);
         setIsSortOpen(false);
+    };
+
+    const handleSliderChange = (event) => {
+        setSliderValue(event.target.value);
+    };
+
+    const handleDistanceSliderChange = (event) => {
+        setDistanceSliderValue(event.target.value);
     };
 
     return (
@@ -210,19 +220,15 @@ export default function Filter() {
                                     <label className="color-box color-white">
                                         <input type="radio" name="color" value="white" />
                                     </label>
-
                                     <label className="color-box color-gray">
                                         <input type="radio" name="color" value="gray" />
                                     </label>
-
                                     <label className="color-box color-red">
                                         <input type="radio" name="color" value="red" />
                                     </label>
-
                                     <label className="color-box color-orange">
                                         <input type="radio" name="color" value="orange" />
                                     </label>
-
                                     <label className="color-box color-yellow">
                                         <input type="radio" name="color" value="yellow" />
                                     </label>
@@ -230,15 +236,12 @@ export default function Filter() {
                                     <label className="color-box color-pink">
                                         <input type="radio" name="color" value="pink" />
                                     </label>
-
                                     <label className="color-box color-cyan">
                                         <input type="radio" name="color" value="cyan" />
                                     </label>
-
                                     <label className="color-box color-brown">
                                         <input type="radio" name="color" value="brown" />
                                     </label>
-
                                     <label className="color-box color-blue">
                                         <input type="radio" name="color" value="blue" />
                                     </label>
@@ -246,8 +249,44 @@ export default function Filter() {
                                 <p className="small-text" >scroll til siden</p>
                                 <hr />
                             </motion.div>
-                            <motion.div variants={itemVariants}>Item 4 </motion.div>
-                            <motion.div variants={itemVariants}>Item 5 </motion.div>
+                            <motion.div variants={itemVariants}>
+                                <p>Pris (pr. dag)</p>
+                                <div className="price-range-slider">
+                                    <input
+                                        type="range"
+                                        id="price-slider"
+                                        min="0"
+                                        max="1000"
+                                        value={sliderValue}
+                                        step="10"
+                                        onChange={handleSliderChange}
+                                    />
+                                    <div className="slider-value">
+                                        <span className="min-value">0kr</span>
+                                        <span className="max-value">{sliderValue}kr</span>
+                                    </div>
+                                </div>
+                                <hr />
+                            </motion.div>
+                            <motion.div variants={itemVariants}>
+                                <p>Afstand (km)</p>
+                                <div className="distance-range-slider">
+                                    <input
+                                        type="range"
+                                        id="distance-slider"
+                                        min="0"
+                                        max="100"
+                                        value={distanceSliderValue}
+                                        step="1"
+                                        onChange={handleDistanceSliderChange}
+                                    />
+                                    <div className="slider-value">
+                                        <span className="min-value">0km</span>
+                                        <span className="max-value">{distanceSliderValue}km</span>
+                                    </div>
+                                </div>
+                                <hr />
+                            </motion.div>
                         </motion.section>
                     </motion.div>
                 </div>
