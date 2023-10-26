@@ -20,6 +20,7 @@ export default function PostForm({ savePost, post }) {
     const [price, setPrice] = useState("");
     const [notice, setNotice] = useState("");
     const [renterName, setRenterName] = useState("");
+    const [address, setAddress] = useState ("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -32,6 +33,7 @@ export default function PostForm({ savePost, post }) {
             setColor(post.color);
             setNotice(post.notice);
             setRenterName(post.renterName);
+            setAddress(post.address);
         }
     }, [post]);
 
@@ -92,6 +94,7 @@ export default function PostForm({ savePost, post }) {
             image: formData.image,
             uid: "fTs84KRoYw5pRZEWCq2Z",
             renterName: userData.firstName,
+            address: userData.address,
             details: {
                 size: formData.size,
                 quality: formData.quality,

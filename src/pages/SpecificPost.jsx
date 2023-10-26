@@ -53,6 +53,9 @@ export default function SpecificPost() {
     </div>
   </div>
 </div>
+<div>
+  <p className='address'>{post.address}</p>
+</div>
             
             </div>
           <div className="renter-text">

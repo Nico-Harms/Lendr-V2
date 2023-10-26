@@ -67,3 +67,9 @@
   margin: 0;
 }
 
+.address {
+  display: flex;
+    justify-content: end;
+    margin-top: 5px;
+}
+
