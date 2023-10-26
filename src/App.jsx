@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Liked from "./pages/Liked";
-import Aftaler from "./pages/Aftaler";
+import Deals from "./pages/Deals";
 import Profil from "./pages/Profil";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignUpPage";
@@ -24,7 +24,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/liked" element={<Liked />} />
-        <Route path="/aftaler" element={<Aftaler />} />
+        <Route path="/aftaler" element={<Deals />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/home" element={<Home />} />

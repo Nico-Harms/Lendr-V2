@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --greenPrime: #72CA81;
+    --greenSec: #C4EECB;
+    --greenAccent: #389446;
+    --white: #FAFAFF;
+    --navy: #031926;
+}
+
+/* Add a class to change the background color to green and round corners */
+.toggle-button.active {
+    background-color: var(--greenPrime);
+    color: white; /* Text color for the active button */
+   
+  }
+  
+
+  .toggle-button:not(.active) {
+    background-color: var(--white);
+    color: var(--navy); 
+  }
+  
+
+  .btn-group button {
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
+    border: 1px solid var(--greenPrime);
+    width: 100px;
+    
+  }
+
+  .btn-group button:nth-child(1){
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+   
+  }
+
+  .btn-group button:nth-child(2){
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+   
+  }
+  
+  
+  
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
