@@ -1,20 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './compCss/Postcard.css';
 import { HeartStraight, MapPin } from "@phosphor-icons/react";
 
-export default function PostCard({ post }) {
-  const [isLiked, setIsLiked] = useState(false);
-  
-  const navigate = useNavigate();
+  export default function PostCard({ post }) {
+    const [isLiked, setIsLiked] = useState(false);
 
-  function handleClick() {
-    navigate(`posts/${post.id}`);
-  }
+    const navigate = useNavigate();
 
-  function handleLike() {
-    setIsLiked(!isLiked);
-  }
+    useEffect(() => {
+      // Check if the post is already liked when the component mounts
+      const likedPosts = JSON.parse(localStorage.getItem('likedPosts')) || [];
+      setIsLiked(likedPosts.some((likedPost) => likedPost.id === post.id));
+    }, [post.id]);
+
+    function handleClick() {
+      navigate(`posts/${post.id}`);
+    }
+
+    function handleLike() {
+      // Toggle the like state
+      const newLikedState = !isLiked;
+      setIsLiked(newLikedState);
+
+      // Retrieve liked posts from local storage or initialize an empty array
+      const likedPosts = JSON.parse(localStorage.getItem('likedPosts')) || [];
+
+      // Update liked posts based on the like state
+      if (newLikedState) {
+        const updatedLikedPosts = [...likedPosts, post];
+        localStorage.setItem('likedPosts', JSON.stringify(updatedLikedPosts));
+      } else {
+        const updatedLikedPosts = likedPosts.filter((likedPost) => likedPost.id !== post.id);
+        localStorage.setItem('likedPosts', JSON.stringify(updatedLikedPosts));
+      }
+    }
 
   return (
     <article className='postCard'>

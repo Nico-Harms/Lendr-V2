@@ -30,6 +30,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/createpost" element={<CreatePostPage />} />
         <Route path="/home/posts/:postId" element={<SpecificPost />} />
+        <Route path="liked/posts/:postId" element={<SpecificPost />} />
         <Route path="/sendrequest/:postId" element={<SendRequest />} />
         <Route path="/choosecategory" element={<ChooseCategory />} />
         <Route path="/accepteddeal" element={<AcceptedDeal />} />
