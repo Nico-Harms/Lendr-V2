@@ -1,0 +1,35 @@
+
+   .accepted-deal-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+   }
+   
+   .l-quote {
+    position: relative;
+    width: 250px;
+    padding: 15px 25px 20px;
+    margin: 20px auto;
+    color: var(--white);
+    background: var(--greenPrime);
+    border: 1px solid var(--greenPrime);
+    border-radius: 25px;
+  }
+  
+  .quote:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    border-width: 30px 30px 0 0;
+    border-style: solid;
+    border-color: var(--greenPrime) transparent;
+    transform: skewX(-15deg);
+  }
+
+  .mascot-accept{
+    width: 200px;
+  }
+  
