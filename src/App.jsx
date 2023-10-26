@@ -11,11 +11,8 @@ import Header from "./components/Header";
 import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/SpecificPost";
 import ChooseCategory from "./pages/ChooseCategory";
-<<<<<<< Updated upstream
 import SendRequest from "./pages/SendRequest";
-=======
 import AcceptedDeal from "./pages/AcceptedDeal";
->>>>>>> Stashed changes
 
 
 export default function App() {
