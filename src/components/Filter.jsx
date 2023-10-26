@@ -26,7 +26,7 @@ const containerVariants = {
     },
 };
 
-export default function Filter() {
+export default function Filter({ handleSort }) {
 
     const [isSortOpen, setIsSortOpen] = useState(false);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -49,6 +49,13 @@ export default function Filter() {
 
     const handleDistanceSliderChange = (event) => {
         setDistanceSliderValue(event.target.value);
+    };
+    const handleSortClick = (option) => {
+        handleSort(option);  // Call the original handleSort function
+
+        // Close both filter and sort dropdowns
+        setIsFilterOpen(false);
+        setIsSortOpen(false);
     };
 
     return (
@@ -111,11 +118,12 @@ export default function Filter() {
                                 <p>Ældste først</p>
                                 <hr />
                             </motion.div>
-                            <motion.div variants={itemVariants}>
+                            <motion.div variants={itemVariants} onClick={() => handleSortClick("lowestPrice")}>
                                 <p>Laveste Pris</p>
                                 <hr />
                             </motion.div>
-                            <motion.div variants={itemVariants}>
+
+                            <motion.div variants={itemVariants} onClick={() => handleSortClick("highestPrice")}>
                                 <p>Højeste Pris</p>
                                 <hr />
                             </motion.div>
