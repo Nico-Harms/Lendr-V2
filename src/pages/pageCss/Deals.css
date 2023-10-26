@@ -18,7 +18,6 @@
     color: white; /* Text color for the active button */
    
   }
-  
 
   .toggle-button:not(.active) {
     background-color: var(--white);
@@ -32,7 +31,6 @@
     float: left;
     border: 1px solid var(--greenPrime);
     width: 100px;
-    
   }
 
   .btn-group button:nth-child(1){
@@ -47,10 +45,16 @@
    
   }
   
-  
-  
   .btn-group:after {
     content: "";
     clear: both;
     display: table;
   }
+
+  .request-con {
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+
+

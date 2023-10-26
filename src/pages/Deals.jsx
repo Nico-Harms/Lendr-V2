@@ -16,17 +16,12 @@ export default function Deals() {
 
       <div className="btn-group">
         <button
-          className={`toggle-button ${activeButton === 'Lejer' ? 'active' : ''}`}
-          onClick={() => handleButtonClick('Lejer')}
-        >
-          Lejer
-        </button>
-        <button
-          className={`toggle-button ${activeButton === 'Udlejer' ? 'active' : ''}`}
-          onClick={() => handleButtonClick('Udlejer')}
-        >
-          Udlejer
-        </button>
+          className={`toggle-button ${activeButton === 'Lejer' ? 'active' : ''}`} onClick={() => handleButtonClick('Lejer')}>Lejer</button>
+        <button className={`toggle-button ${activeButton === 'Udlejer' ? 'active' : ''}`} onClick={() => handleButtonClick('Udlejer')}>Udlejer</button>
+      </div>
+
+      <div className='request-con'>
+        <p>Afventende anmodninger</p>
       </div>
     </main>
   );
