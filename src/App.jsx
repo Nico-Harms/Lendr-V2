@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/SpecificPost";
+import ChooseCategory from "./pages/ChooseCategory";
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/createpost" element={<CreatePostPage />} />
         <Route path="/home/posts/:postId" element={<SpecificPost />} />
+        <Route path="/choosecategory" element={<ChooseCategory />} />
       </Routes>
     </>
   );
