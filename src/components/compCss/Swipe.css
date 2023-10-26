@@ -1,0 +1,33 @@
+.swiper{
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--navy);
+    text-decoration: none;
+    border: 2px solid var(--greenPrime);
+    transition: .5s;
+}
+
+.swiper:hover{
+padding-left: 0;
+padding-right: 40px;
+}
+
+.swiper span{
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--greenPrime);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+}
+
+.swiper:hover span{
+    left: calc(100% - 55px);
+}

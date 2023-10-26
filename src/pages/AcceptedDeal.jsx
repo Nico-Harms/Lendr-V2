@@ -5,12 +5,17 @@ import cloud2 from "../assets/images/cloud2.svg"
 import plane from "../assets/images/planeChooseImg.svg"
 import { X } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import Swipe from "../components/Swipe";
 
 export default function AcceptedDeal() {
+
+    const goToHome = () => {
+        window.location.href = "/home"
+    }
     return (
         <main className="acceptMain">
             <div className="acceptedTop">
-                <X size={32} weight="light" />
+                <X size={32} weight="light" onClick={goToHome} />
                 <p>Tillykke med din nye aftle!</p>
             </div>
             <div className="accepted-deal-wrapper">
@@ -28,6 +33,7 @@ export default function AcceptedDeal() {
                 <button className='acceptBtn'>Gå til aftale</button>
                 <Link className="goToHome" to="/home">Forside</Link>
             </div>
+            <Swipe />
         </main>
     )
 }
