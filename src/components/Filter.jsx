@@ -2,9 +2,9 @@ import { motion } from "framer-motion"
 import './compCss/Filter.css';
 import React, { useState } from 'react';
 import { SlidersHorizontal, SortAscending } from "@phosphor-icons/react";
-import bagsFilter from '../assets/images/category-bags.svg'
-import suitcaseFilter from '../assets/images/category-suitcases.svg'
-import otherFilter from '../assets/images/category-other.svg'
+import bagsFilter from '../assets/images/kategori-taske.svg'
+import suitcaseFilter from '../assets/images/kategori-kuffert.svg'
+import otherFilter from '../assets/images/kategori-ass.svg'
 
 
 
@@ -201,7 +201,7 @@ export default function Filter() {
                                 </div>
                                 <hr />
                             </motion.div>
-                            <motion.div variants={itemVariants}>Item 3 </motion.div>
+                            <motion.div variants={itemVariants}> </motion.div>
                             <motion.div variants={itemVariants}>Item 4 </motion.div>
                             <motion.div variants={itemVariants}>Item 5 </motion.div>
                         </motion.section>
