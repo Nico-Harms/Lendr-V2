@@ -1,13 +1,47 @@
-import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'; // Import useParams
+import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import { X, ArrowLeft } from "@phosphor-icons/react";
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 import "../pages/pageCss/SendRequest.css";
+import { CaretDown } from "@phosphor-icons/react";
 
 export default function SendRequest() {
-
-    const { postId } = useParams(); // Get postId from the URL
+    const { postId } = useParams();
+    const [showCalender, setShowCalender] = useState(false); // State for showing the calender
+    const [dateRange, setDateRange] = useState([
+        {
+            startDate: null,
+            endDate: null,
+            key: 'selection',
+        }
+    ]); // State for date range
 
     const [post, setPost] = useState(null);
+    const [roundedPrice, setRoundedPrice] = useState(0); // Declare roundedPrice in component state
+
+    const handleDateChange = (ranges) => {
+        // Calculate the number of dates picked
+        const { startDate, endDate } = ranges.selection;
+        const numberOfDatesPicked = startDate && endDate ? (endDate - startDate) / (1000 * 60 * 60 * 24) + 1 : 0;
+
+        // Update the date range state
+        setDateRange([ranges.selection]);
+
+        const actualPrice = post.details.price * numberOfDatesPicked;
+
+        // Round 'actualPrice' to one decimal place
+        const roundedPrice = actualPrice.toFixed(0);
+
+        // Update the roundedPrice state
+        setRoundedPrice(roundedPrice);
+    };
+
+    const displayCalender = showCalender ? "dateRangePicker show" : "dateRangePicker";
+    const handleDisplayCalender = () => {
+        setShowCalender(!showCalender);
+    }
 
     useEffect(() => {
         async function getPost() {
@@ -28,7 +62,6 @@ export default function SendRequest() {
     }
 
     return (
-
         <main className="sendRequestMain">
             <div className="sendRequestWrapper">
                 <div className="arrowWrapper">
@@ -37,37 +70,52 @@ export default function SendRequest() {
                 <section className="rentPeriodWrapper">
                     <div className="periodInfo">
                         <h3>Lejeperiode</h3>
-                        <input type="date" name="" id="" />
-                        <p>Aktuel pris:</p> <span></span>
-                        <p>Depositum:</p> <span></span>
+                        <button className="loginBtn soMeLogin requestBtn" onClick={handleDisplayCalender}>Vælg Lejeperiode<span><CaretDown size={24} /></span></button>
+                        <DateRange
+                            ranges={dateRange}
+                            onChange={handleDateChange}
+                            startDatePlaceholder="Afhentnings dato"
+                            endDatePlaceholder="Afleverings dato"
+                            minDate={new Date()}
+                            rangeColors={["#72CA81"]}
+                            showMonthAndYearPickers={false}
+                            className={displayCalender}
+                        />
+
+                        <div className="periodInfoText">
+                            <div><p>Lejepris:</p> <span>{roundedPrice} kr.</span></div>
+                            <div><p>Depositum:</p> <span>1000 kr.</span></div>
+                        </div>
+
                     </div>
-                    <div className="rentPeriodImgWrapper"><img src={post.image} alt="" />
-                    </div>
+                    <div className="rentPeriodImgWrapper"><img src={post.image} alt="" /></div>
                 </section>
+
                 <section className="productInfoWrapper">
-                    <h3>Produktinfo</h3>
+                    <h3>Produktoplysninger</h3>
                     <div className="productInfo">
                         <div>
-                            <p>Str.</p>
+                            <span>Str.</span>
                             <p>{post.details.size}</p>
                         </div>
                         <div>
-                            <p>Mærke.</p>
+                            <span>Mærke.</span>
                             <p>{post.title}</p>
                         </div>
                         <div>
-                            <p>Tilstand</p>
+                            <span>Tilstand</span>
                             <p>{post.details.quality}</p>
                         </div>
                         <div>
-                            <div>Lokation</div>
+                            <span>Lokation</span>
                             <p>{post.address}</p>
                         </div>
                     </div>
+                
                 </section>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button>Send anmodning</button>
+                <textarea readOnly placeholder="TEXT FRA FORRIGE SIDE / VIA LOCAL STORAGE" className="requestTextArea" name="" id="" cols="30" rows="10"></textarea>
+                <button className="loginBtn soMeLogin requestBtn">Send anmodning</button>
             </div>
-        </main >
-    )
+        </main>
+    );
 }
