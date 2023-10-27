@@ -58,6 +58,7 @@
 
   .my-deals h2 {
     font-size: 20px;
+    font-style: italic;
   }
   .suitcase-text {
     display: flex;
