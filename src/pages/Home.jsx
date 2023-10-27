@@ -38,6 +38,9 @@ export default function Home() {
         <main className="page">
             <Filter handleSort={handleSort} />
             <section className="grid-container postCardDisplaySection">
+            <h2 style={{ fontSize: '2.2rem', textAlign: 'center' }} className="homeHeader">
+  Opslag nær dig
+</h2>
                 {posts.map(post => (
                     <PostCard post={post} key={post.id} />
                 ))}

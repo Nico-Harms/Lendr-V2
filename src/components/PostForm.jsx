@@ -20,7 +20,7 @@ export default function PostForm({ savePost, post }) {
     const [price, setPrice] = useState("");
     const [notice, setNotice] = useState("");
     const [renterName, setRenterName] = useState("");
-    const [address, setAddress] = useState ("");
+    const [address, setAddress] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -148,7 +148,7 @@ export default function PostForm({ savePost, post }) {
                         <option value="Brugt">Brugt</option>
                         <option value="Lidt brugt">Lidt brugt</option>
                         <option value="Som ny">Som ny</option>
-                        
+
                     </select>
                 </div>
 
@@ -202,8 +202,15 @@ export default function PostForm({ savePost, post }) {
 
                 <div className="input-container">
                     <label htmlFor="price">Lejepris pr. dag</label>
-                    <input name="price" type="text" value={price} placeholder="Lejepris pr. dag i kr." onChange={e => setPrice(e.target.value)} />
+                    <input
+                        name="price"
+                        type="text"
+                        value={price}  // Display the entered value
+                        placeholder="Lejepris pr. dag i kr."
+                        onChange={e => setPrice(e.target.value.replace(/\D/g, ''))}  // Remove non-numeric characters
+                    />
                 </div>
+
                 <div className="input-notice">
                     <label htmlFor="notice">Bemærkning(er)</label>
                     <textarea name="notice" className="input-con postformInput" type="text" value={notice} placeholder="Eventuelle bemærkninger skrives her.." onChange={e => setNotice(e.target.value)} />

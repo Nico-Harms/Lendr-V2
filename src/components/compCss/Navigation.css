@@ -134,3 +134,12 @@ body {
     left: -46vw;
     transition: 0s ease-in-out;
 }
+.createPost.closing {
+    transition: 0.5s ease-in-out;  /* Add a transition for the closing effect */
+    width: 70px;
+    height: 70px;
+    left: calc(50% - 35px);
+    bottom: calc(50% - 25px);
+    align-items: center;
+  }
+  

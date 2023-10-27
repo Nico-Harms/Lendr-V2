@@ -42,9 +42,9 @@ import { HeartStraight, MapPin } from "@phosphor-icons/react";
       <div className='textInfoWrapper'>
         <div className='textInfo'>
           <h3>{post.title}</h3>
-          <p>Størrelse: {post.details.size}</p>
+          <p>Størrelse: {post.details && post.details.size}</p>
           <p>Tilstand: {post.details.quality}</p>
-          <p>Pris pr. dag: {post.details.price}</p>
+          <p className='pricePrDay'>Pris pr. dag: {post.details.price} kr,-</p>
         </div>
         <div className="iconwrapper">
           <div className='mapPinWrapper'>

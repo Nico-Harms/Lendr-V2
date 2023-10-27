@@ -26,6 +26,7 @@ export default function Navigation() {
       category.classList.toggle('creating');
     })
   }
+
 useEffect(() => {
   const navWrapper = document.querySelector('.navWrapper');
   // Check the pathname and set display to none for '/home'
@@ -46,15 +47,15 @@ useEffect(() => {
           <div className="createPost"> </div>
           <Plus onClick={createPost} size={30} weight="light" color="#fafaff" />
           <div className="category-wrapper">
-    <NavLink to="/createpost" className="img-wrapper">
+          <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
         <img src={bagsSmall} alt="#" />
         <p>Rygsække</p>
     </NavLink>
-    <NavLink to="/createpost" className="img-wrapper">
+    <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
         <img src={suitcasesSmall} alt="#" />
         <p>Kufferter</p>
     </NavLink>
-    <NavLink to="/createpost" className="img-wrapper">
+    <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
         <img src={otherSmall} alt="#" />
         <p>Tilbehør</p>
     </NavLink>

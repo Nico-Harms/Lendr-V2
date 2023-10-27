@@ -68,3 +68,6 @@
     color: var(--greenPrime);
 }
 
+.pricePrDay {
+    white-space: nowrap;
+}
