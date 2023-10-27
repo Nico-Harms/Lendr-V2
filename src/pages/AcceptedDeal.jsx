@@ -1,22 +1,31 @@
-import "../pages/pageCss/AcceptedDeal.css"
-import mascot from "../assets/images/maskot.svg"
-import cloud1 from "../assets/images/cloud1.svg"
-import cloud2 from "../assets/images/cloud2.svg"
-import plane from "../assets/images/planeChooseImg.svg"
+import React, { useState } from 'react';
+import "../pages/pageCss/AcceptedDeal.css";
+import mascot from "../assets/images/maskot.svg";
+import cloud1 from "../assets/images/cloud1.svg";
+import cloud2 from "../assets/images/cloud2.svg";
+import plane from "../assets/images/planeChooseImg.svg";
 import { X } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import Swipe from "../components/Swipe";
 
 export default function AcceptedDeal() {
+    const [isSwipeOpen, setIsSwipeOpen] = useState(false);
+  
 
     const goToHome = () => {
-        window.location.href = "/home"
+        window.location.href = "/home";
     }
+
+    const toggleSwipe = () => {
+        setIsSwipeOpen(!isSwipeOpen);
+    };
+
     return (
         <main className="acceptMain">
+            <button onClick={toggleSwipe}>åben</button>
             <div className="acceptedTop">
                 <X size={32} weight="light" onClick={goToHome} />
-                <p>Tillykke med din nye aftle!</p>
+                <p>Tillykke med din nye aftale!</p>
             </div>
             <div className="accepted-deal-wrapper">
                 <div className="l-quote">
@@ -33,7 +42,8 @@ export default function AcceptedDeal() {
                 <button className='acceptBtn'>Gå til aftale</button>
                 <Link className="goToHome" to="/home">Forside</Link>
             </div>
-            <Swipe />
+            <Swipe isOpen={isSwipeOpen} toggleSwipe={toggleSwipe} />
+
         </main>
     )
 }
