@@ -68,21 +68,21 @@ export default function SpecificPost() {
         <p>{post.renterName}</p>
       </div>
       <div className="star-icon">
-      <Star color='#77BE80' weight='fill' size={44} />
-      <Star color='#77BE80' weight='fill' size={44} />
-      <Star color='#77BE80' weight='fill' size={44} />
-      <Star color='#77BE80' weight='fill' size={44} />
-      <Star color='#77BE80' size={44} />
-        </div>
-<div className='textarea-container'>
-       <textarea name="rent" className='textarea-container' type="text" placeholder="Bemærkning til udlejer.."></textarea>
-       </div>
+        <Star color='#77BE80' weight='fill' size={44} />
+        <Star color='#77BE80' weight='fill' size={44} />
+        <Star color='#77BE80' weight='fill' size={44} />
+        <Star color='#77BE80' weight='fill' size={44} />
+        <Star color='#77BE80' size={44} />
+      </div>
+      <div className='textarea-container'>
+        <textarea name="rent" className='textarea-container' type="text" placeholder="Bemærkning til udlejer.."></textarea>
+      </div>
 
-       <div className='chat-con'>
-       <ChatCenteredDots color='#77BE80' size={36} />
-       <p>tryk her for at sende besked til udlejer</p>
-       </div>
-       
+      <div className='chat-con'>
+        <ChatCenteredDots color='#77BE80' size={36} />
+        <p>tryk her for at sende besked til udlejer</p>
+      </div>
+
       <button className='button-rent' onClick={handleClick}>Vælg lejeperiode</button>
     </main>
   );

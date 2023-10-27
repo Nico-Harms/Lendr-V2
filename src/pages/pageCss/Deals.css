@@ -56,5 +56,59 @@
     font-style: italic;
   }
 
+  .my-deals h2 {
+    font-size: 20px;
+  }
+  .suitcase-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    gap: 130px;
+    font-size: 14px;
+  }
+
+  .swap-img {
+    object-fit: cover;
+    display: flex;
+    width: 290px;
+  }
+
+  .info-text {
+    display: flex;
+    justify-content: flex-end;
+    color: #828A8D;
+    font-size: 12px;
+    text-decoration: underline;
+  }
+
+  .current-deals-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border: #72CA81 1px solid;
+    border-radius: 10px;
+    width: 80%;
+    padding: 10px 0px 0px 0px;
+    
+  }
+
+  .current-deals-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .current-p {
+    font-size: 12px;
+  }
+  .mascot-deals {
+    width: 100px;
+    height: 100px;
+  }
 
 
