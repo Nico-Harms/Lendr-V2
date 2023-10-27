@@ -11,14 +11,13 @@ import Swipe from "../components/Swipe";
 export default function AcceptedDeal() {
     const [isSwipeOpen, setIsSwipeOpen] = useState(false);
   
+    const toggleSwipe = () => {
+        setIsSwipeOpen(!isSwipeOpen);
+    };
 
     const goToHome = () => {
         window.location.href = "/home";
     }
-
-    const toggleSwipe = () => {
-        setIsSwipeOpen(!isSwipeOpen);
-    };
 
     return (
         <main className="acceptMain">
