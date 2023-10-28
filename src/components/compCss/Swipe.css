@@ -46,6 +46,22 @@
     justify-content: center;
 }
 
+.denyWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-style: italic;
+}
+
+.denyWrapper button{
+    width: 140px;
+    justify-content: center;
+    font-size: 16px;
+}
+
 .swiper span svg {
     color: var(--white);
 }

@@ -7,13 +7,19 @@ import plane from "../assets/images/planeChooseImg.svg";
 import { X } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import Swipe from "../components/Swipe";
+import Deny from '../components/Deny';
 
 export default function AcceptedDeal() {
     const [isSwipeOpen, setIsSwipeOpen] = useState(false);
+    const [isDenyOpen, setIsDenyOpen] = useState(false);
   
     const toggleSwipe = () => {
         setIsSwipeOpen(!isSwipeOpen);
     };
+
+    const toggleDeny = () => {
+        setIsDenyOpen(!isDenyOpen);
+    }
 
     const goToHome = () => {
         window.location.href = "/home";
@@ -21,7 +27,8 @@ export default function AcceptedDeal() {
 
     return (
         <main className="acceptMain">
-            <button onClick={toggleSwipe}>åben</button>
+            <button onClick={toggleSwipe}>accepter</button>
+            <button onClick={toggleDeny}>afvis</button>
             <div className="acceptedTop">
                 <X size={32} weight="light" onClick={goToHome} />
                 <p>Tillykke med din nye aftale!</p>
@@ -42,6 +49,7 @@ export default function AcceptedDeal() {
                 <Link className="goToHome" to="/home">Forside</Link>
             </div>
             <Swipe isOpen={isSwipeOpen} toggleSwipe={toggleSwipe} />
+            <Deny isOpen={isDenyOpen} toggleSwipe={toggleDeny} />
 
         </main>
     )
