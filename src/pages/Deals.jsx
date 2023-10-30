@@ -14,7 +14,7 @@ export default function Deals() {
     <main className="page">
       <div className="my-deals">
         <h2>Mine aftaler</h2>
-        /*HEJ MED DIG*/
+        
       </div>
 
       <div className="btn-group">

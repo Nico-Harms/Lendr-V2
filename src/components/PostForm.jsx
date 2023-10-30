@@ -48,7 +48,7 @@ export default function PostForm({ savePost, post }) {
             reader.readAsDataURL(file);
             setErrorMessage("");
         } else {
-            setErrorMessage("The image file must be below 0.5 MB");
+            setErrorMessage("Filen må maksimalt fylde 0.5 MB");
         }
     }
 
@@ -126,6 +126,7 @@ export default function PostForm({ savePost, post }) {
                         <p>Klik her for at tilføje</p>
                     </div>
                 </label>
+                <p className="text-error">{errorMessage}</p>
                 <div className="input-container">
                     <label className="postformLabel" htmlFor="brand">Mærke på kuffert</label>
                     <input name="brand" className="postformInput" type="text" value={title} placeholder="Indtast mærke på kuffert.." onChange={e => setTitle(e.target.value)} />
@@ -233,7 +234,7 @@ export default function PostForm({ savePost, post }) {
                     <p>Accepter Handelsbetingleser</p>
                 </div>
 
-                <p className="text-error">{errorMessage}</p>
+                
                 <div className="botton-box">
                     <button className="postformButton" type="submit">Opret</button>
                 </div>
