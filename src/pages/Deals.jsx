@@ -9,7 +9,7 @@ export default function Deals() {
   const handleButtonClick = (buttonText) => {
     setActiveButton(buttonText);
   };
-
+ 
   return (
     <main className="page">
       <div className="my-deals">
