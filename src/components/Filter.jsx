@@ -58,6 +58,7 @@ export default function Filter({ handleSort }) {
         setIsSortOpen(false);
     };
 
+    
     return (
         <>
             <div className="filter-wrapper">
@@ -110,11 +111,11 @@ export default function Filter({ handleSort }) {
                             }}
                             style={{ pointerEvents: isSortOpen ? 'auto' : 'none' }}
                         >
-                            <motion.div variants={itemVariants}>
+                            <motion.div variants={itemVariants} onClick={() => handleSortClick("newestFirst")}>
                                 <p>Nyeste først</p>
                                 <hr />
                             </motion.div>
-                            <motion.div variants={itemVariants}>
+                            <motion.div variants={itemVariants} onClick={() => handleSortClick("oldestFirst")}>
                                 <p>Ældste først</p>
                                 <hr />
                             </motion.div>
@@ -294,6 +295,10 @@ export default function Filter({ handleSort }) {
                                     </div>
                                 </div>
                                 <hr />
+                                <div className="filterBtn">
+                                    <a className="applyBtn" href="#">Anvend</a>
+                                    <a className="clearBtn" href="#">Nulstil</a>
+                                </div>
                             </motion.div>
                         </motion.section>
                     </motion.div>

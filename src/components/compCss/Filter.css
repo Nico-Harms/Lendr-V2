@@ -181,4 +181,27 @@
     flex: 1;
     text-align: right;
   }
+  .filterBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .applyBtn {
+    text-decoration: none;
+    border-radius: 20px 0 0 20px;
+    color: white;
+    background-color: var(--greenPrime);
+    border: solid var(--greenPrime);
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .clearBtn {
+    text-decoration: none;
+    border-radius: 0 20px 20px 0;
+    border: solid var(--greenPrime);
+    padding: 10px;
+    font-size: 1rem;
+    color: black;
+  }
   

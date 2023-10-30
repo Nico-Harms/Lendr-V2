@@ -1,4 +1,5 @@
-// GoogleSignInButton.jsx
+//   Lavet af Nicolai  
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, firestore } from '../firebaseConfig';

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../components/compCss/Postform.css";
-import { getDatabase, ref, push, set } from 'firebase/database';
+import { getDatabase, ref, push, set, serverTimestamp } from 'firebase/database';
 import { Navigate, useNavigate } from "react-router-dom";
 import mascot from "../assets/images/maskot-04.svg"
 import plane from "../assets/images/planeChooseImg.svg"
@@ -105,6 +105,7 @@ export default function PostForm({ savePost, post }) {
                 color: formData.color,
                 price: formData.price,
                 notice: formData.notice,
+                timestamp: serverTimestamp(), // Use serverTimestamp to let Firebase set the timestamp
             },
         };
 
@@ -116,7 +117,6 @@ export default function PostForm({ savePost, post }) {
         alert('Opslag oprettet');
         navigate('/home');
     }
-
     return (
         <form className="postformWrapper" onSubmit={handleSubmit}>
             <h1 className="postformH1">Indtast Oplysninger</h1>

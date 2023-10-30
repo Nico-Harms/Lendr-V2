@@ -1,4 +1,4 @@
-// SignupPage.jsx
+//Lavet af Nicolai og Mads 
 import React, { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { doc, setDoc, getDoc, getFirestore } from 'firebase/firestore';

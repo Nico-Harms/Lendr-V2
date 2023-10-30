@@ -1,4 +1,4 @@
-// Home.jsx
+// Lavet af Nicolai 
 
 import LocalUserData from "../components/LocalUserData";
 import { useState, useEffect } from "react";
@@ -20,20 +20,22 @@ export default function Home() {
         }
         getPosts();
     }, []);
-
     const handleSort = (option) => {
         setSortOption(option);
-        const sortedPosts = [...posts].sort((a, b) => {
-            if (option === "lowestPrice") {
-                return a.details.price - b.details.price;
-            } else if (option === "highestPrice") {
-                return b.details.price - a.details.price;
-            }
-            // Add other sorting options as needed
-            return 0;
-        });
-        setPosts(sortedPosts);
-    };
+        const sortedPosts = [...posts];
+
+        if (option === "lowestPrice") {
+            sortedPosts.sort((a, b) => a.details.price - b.details.price);
+        } else if (option === "highestPrice") {
+            sortedPosts.sort((a, b) => b.details.price - a.details.price);
+        } else if (option === "newestFirst") { // Change to "newestFirst"
+            sortedPosts.sort((a, b) => b.details.timestamp - a.details.timestamp);
+        } else if (option === "oldestFirst") {
+        sortedPosts.sort((a, b) => a.details.timestamp - b.details.timestamp);
+        }
+        setPosts([...sortedPosts]); 
+    }
+
     return (
         <main className="page">
             <Filter handleSort={handleSort} />
