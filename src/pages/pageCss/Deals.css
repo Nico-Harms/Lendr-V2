@@ -68,12 +68,18 @@
     width: 100%;
     gap: 130px;
     font-size: 14px;
+    justify-content: space-between;
   }
 
   .swap-img {
     object-fit: cover;
     display: flex;
-    width: 290px;
+    width: 100%;
+  }
+
+  .suitcase-column{
+    width: 80%;
+    margin: 0 auto;
   }
 
   .info-text {
