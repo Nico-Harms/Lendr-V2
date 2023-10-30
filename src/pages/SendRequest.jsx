@@ -6,8 +6,13 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import "../pages/pageCss/SendRequest.css";
 import { CaretDown } from "@phosphor-icons/react";
+import { useNavigate } from 'react-router-dom';
 
 export default function SendRequest() {
+
+    const navigate = useNavigate();
+    const rentNotice = sessionStorage.getItem('rentNotice');
+
     const { postId } = useParams();
     const [showCalender, setShowCalender] = useState(false); // State for showing the calender
     const [dateRange, setDateRange] = useState([
@@ -20,6 +25,14 @@ export default function SendRequest() {
 
     const [post, setPost] = useState(null);
     const [roundedPrice, setRoundedPrice] = useState(0); // Declare roundedPrice in component state
+
+    function navigateBack() {
+        window.history.back();
+    }
+
+    function navigateHome() {
+        navigate('/home');
+    }
 
     const handleDateChange = (ranges) => {
         // Calculate the number of dates picked
@@ -65,7 +78,7 @@ export default function SendRequest() {
         <main className="sendRequestMain">
             <div className="sendRequestWrapper">
                 <div className="arrowWrapper">
-                    <ArrowLeft size={32} /><X size={32} />
+                    <ArrowLeft onClick={navigateBack} size={32} /><X onClick={navigateHome} size={32} />
                 </div>
                 <section className="rentPeriodWrapper">
                     <div className="periodInfo">
@@ -111,9 +124,9 @@ export default function SendRequest() {
                             <p>{post.address}</p>
                         </div>
                     </div>
-                
+
                 </section>
-                <textarea readOnly placeholder="TEXT FRA FORRIGE SIDE / VIA LOCAL STORAGE" className="requestTextArea" name="" id="" cols="30" rows="10"></textarea>
+                <textarea readOnly value={rentNotice} className="requestTextArea" name="" id="" cols="30" rows="10"></textarea>
                 <button className="loginBtn soMeLogin requestBtn">Send anmodning</button>
             </div>
         </main>

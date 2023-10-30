@@ -3,15 +3,21 @@ import { useParams } from 'react-router-dom'; // Import useParams
 import "../pages/pageCss/SpecificPost.css";
 import { useNavigate } from 'react-router-dom';
 import { Star, ChatCenteredDots } from "@phosphor-icons/react";
+
 export default function SpecificPost() {
   const { postId } = useParams(); // Get postId from the URL
 
   const [post, setPost] = useState(null);
 
   const navigate = useNavigate();
+
   function handleClick() {
+    const rentNotice = document.querySelector('.rentNoticeBox').value;
+    sessionStorage.setItem('rentNotice', rentNotice);
     navigate(`/sendrequest/${postId}`);
   }
+
+
 
   useEffect(() => {
     async function getPost() {
@@ -26,6 +32,7 @@ export default function SpecificPost() {
     }
     getPost();
   }, [postId]);
+
 
   if (!post) {
     return <div>Post not found</div>;
@@ -75,7 +82,7 @@ export default function SpecificPost() {
         <Star color='#77BE80' size={44} />
       </div>
       <div className='textarea-container'>
-        <textarea name="rent" className='textarea-container' type="text" placeholder="Bemærkning til udlejer.."></textarea>
+        <textarea name="rent" className='textarea-container rentNoticeBox' type="text"  placeholder="Bemærkning til udlejer.."></textarea>
       </div>
 
       <div className='chat-con'>
