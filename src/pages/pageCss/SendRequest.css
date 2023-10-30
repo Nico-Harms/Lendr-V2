@@ -9,25 +9,29 @@
     justify-content: space-between;
     width: 100%;
 }
+
 .rentPeriodWrapper, .productInfoWrapper {
     display: flex;
     width: 100%;
 }
+
 .rentPeriodWrapper{
     flex-direction: column;
 }
+
 .rentPeriodWrapper img {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 100px 0 0 100px;
-    
+    border-radius: 100px 0 0 100px;  
 }
+
 .rentPeriodImgWrapper{
     position: relative;
     right: -200px;
     top: -75px;
 }
+
 .sendRequestMain {
     width: 100%;
     margin: 0;
@@ -41,6 +45,7 @@
     align-items: center;
     gap: 30px;
 }
+
 .periodInfo {
     display: flex;
     flex-direction: column;
@@ -48,41 +53,43 @@
     justify-content: center;
 }
 
-
 .periodInfoText {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
 }
+
 .periodInfoText div{
     display: flex;
     justify-content: space-between;
 }
+
 .periodInfoText div span{
     width: 200px;
 }
-
 
 .productInfoWrapper {
     flex-direction: column;
     gap: 15px;
     margin-top: -50px;
 }
+
 .productInfo{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 .productInfo div {
     display: flex;
     justify-content: space-between;
 
 }
+
 .productInfo div p{
     width: 175px;
 }
-
 
 .requestBtn {
     padding: 5px;
@@ -93,6 +100,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .requestBtn span {
     display: flex;
 }
@@ -106,10 +114,12 @@
   background-color: var(--white);
   font-size: 15px;
 }
+
 .dateRangePicker.show {
     height: 0px;
     overflow: hidden;
 }
+
 .dateRangePicker {
     transition: 0.6s;
     height: 319px;
