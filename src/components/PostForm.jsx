@@ -23,6 +23,7 @@ export default function PostForm({ savePost, post }) {
     const [address, setAddress] = useState("");
     const navigate = useNavigate();
     const [isPictureAdded, setIsPictureAdded] = useState(false);
+    const [dateError, setDateError] = useState("");
 
 
     useEffect(() => {
@@ -72,7 +73,7 @@ export default function PostForm({ savePost, post }) {
         event.preventDefault();
 
         if (!title || !image || !price || !quality || !size || !color || !notice) {
-            alert("Venligst udfyld alle felter");
+            setDateError("Udfyld venligst alle felter*");
             return;
         }
 
@@ -263,8 +264,11 @@ export default function PostForm({ savePost, post }) {
                 
                 <div className="botton-box">
                     <button className="postformButton" type="submit">Opret</button>
+                    {dateError && <div className="dateError">{dateError}</div>}
                 </div>
+                
             </div>
+            
         </form>
 
 

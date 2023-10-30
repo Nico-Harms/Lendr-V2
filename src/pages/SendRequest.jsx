@@ -12,26 +12,33 @@ import Swipe from "../components/Swipe";
 export default function SendRequest() {
 
     const [isSwipeOpen, setIsSwipeOpen] = useState(false);
+    const [dateError, setDateError] = useState(""); // State to store date error message
 
     const toggleSwipe = () => {
-        setIsSwipeOpen(!isSwipeOpen);
-    };
-    
+        if (dateRange[0].startDate && dateRange[0].endDate) {
+            setIsSwipeOpen(!isSwipeOpen);
+            setDateError(""); // Reset the error message
+        } else {
+            // Set the error message when no date is selected
+            setDateError("Venligst vælg en dato*");
+        }
+    }
+
     const navigate = useNavigate();
     const rentNotice = sessionStorage.getItem('rentNotice');
 
     const { postId } = useParams();
-    const [showCalender, setShowCalender] = useState(false); // State for showing the calender
+    const [showCalender, setShowCalender] = useState(false);
     const [dateRange, setDateRange] = useState([
         {
             startDate: null,
             endDate: null,
             key: 'selection',
         }
-    ]); // State for date range
+    ]);
 
     const [post, setPost] = useState(null);
-    const [roundedPrice, setRoundedPrice] = useState(0); // Declare roundedPrice in component state
+    const [roundedPrice, setRoundedPrice] = useState(0);
 
     function navigateBack() {
         window.history.back();
@@ -42,23 +49,11 @@ export default function SendRequest() {
     }
 
     const handleDateChange = (ranges) => {
-        // Calculate the number of dates picked
-        const { startDate, endDate } = ranges.selection;
-        const numberOfDatesPicked = startDate && endDate ? (endDate - startDate) / (1000 * 60 * 60 * 24) + 1 : 0;
-
-        // Update the date range state
         setDateRange([ranges.selection]);
-
-        const actualPrice = post.details.price * numberOfDatesPicked;
-
-        // Round 'actualPrice' to one decimal place
-        const roundedPrice = actualPrice.toFixed(0);
-
-        // Update the roundedPrice state
-        setRoundedPrice(roundedPrice);
-    };
+    }
 
     const displayCalender = showCalender ? "dateRangePicker show" : "dateRangePicker";
+
     const handleDisplayCalender = () => {
         setShowCalender(!showCalender);
     }
@@ -102,6 +97,8 @@ export default function SendRequest() {
                             className={displayCalender}
                         />
 
+                        
+
                         <div className="periodInfoText">
                             <div><p>Lejepris:</p> <span>{roundedPrice} kr.</span></div>
                             <div><p>Depositum:</p> <span>1000 kr.</span></div>
@@ -131,10 +128,10 @@ export default function SendRequest() {
                             <p>{post.address}</p>
                         </div>
                     </div>
-
                 </section>
                 <textarea readOnly value={rentNotice} className="requestTextArea" name="" id="" cols="30" rows="10"></textarea>
                 <button onClick={toggleSwipe} className="loginBtn soMeLogin requestBtn">Send anmodning</button>
+                {dateError && <div className="dateError">{dateError}</div>}
                 <Swipe isOpen={isSwipeOpen} toggleSwipe={toggleSwipe} />
             </div>
         </main>
