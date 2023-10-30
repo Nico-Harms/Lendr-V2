@@ -41,10 +41,10 @@ import { HeartStraight, MapPin } from "@phosphor-icons/react";
       <img onClick={handleClick} className='kuffertImg' src={post.image} alt={post.title} />
       <div className='textInfoWrapper'>
         <div className='textInfo'>
-          <h3>{post.title}</h3>
-          <p>Størrelse: {post.details && post.details.size}</p>
-          <p>Tilstand: {post.details.quality}</p>
-          <p className='pricePrDay'>Pris pr. dag: {post.details.price} kr,-</p>
+          <p><b>Mærke:</b> {post.title}</p>
+          <p><b>Størrelse:</b> {post.details && post.details.size}</p>
+          <p> <b>Tilstand:</b> {post.details.quality}</p>
+          <p className='pricePrDay'><b>Pris pr. dag:</b>  {post.details.price} kr,-</p>
         </div>
         <div className="iconwrapper">
           <div className='mapPinWrapper'>
