@@ -22,6 +22,8 @@ export default function PostForm({ savePost, post }) {
     const [renterName, setRenterName] = useState("");
     const [address, setAddress] = useState("");
     const navigate = useNavigate();
+    const [isPictureAdded, setIsPictureAdded] = useState(false);
+
 
     useEffect(() => {
         if (post) {
@@ -47,8 +49,10 @@ export default function PostForm({ savePost, post }) {
             };
             reader.readAsDataURL(file);
             setErrorMessage("");
+            setIsPictureAdded(true); // Set isPictureAdded to true when a picture is added
         } else {
             setErrorMessage("Filen må maksimalt fylde 0.5 MB");
+            setIsPictureAdded(false); // Set isPictureAdded to false when no picture is added
         }
     }
 
@@ -117,14 +121,36 @@ export default function PostForm({ savePost, post }) {
         <form className="postformWrapper" onSubmit={handleSubmit}>
             <h1 className="postformH1">Indtast Oplysninger</h1>
             <div className="test">
-                <label className="postformLabel">
+            <label className="postformLabel">
                     <input type="file" className="file-input" accept="image/*" onChange={handleImageChange} />
-                    <div className="image-preview" src={image} alt="Choose" onError={event => (event.target.src)} >
-                        <img src={mascot} alt="Mascot" className="mascotChooseImg" />
-                        <img src={plane} alt="plane" className="planeChooseImg" />
-                        <p>Billede mangler</p>
-                        <p>Klik her for at tilføje</p>
+                    <div className="image-preview" src={image} alt="Choose" onError={event => (event.target.src)}>
+                        {isPictureAdded ? (
+        
+                            <div>
+                                <img src={image} alt="Uploaded" className="uploaded-image" />
+                                
+                            </div>
+                            
+                        ) : (
+                            // Render this when no picture is added
+                            <div>
+                                <img src={mascot} alt="Mascot" className="mascotChooseImg" />
+                                <img src={plane} alt="plane" className="planeChooseImg" />
+                                <p>Billede mangler</p>
+                                <p>Klik her for at tilføje</p>
+                            </div>
+                        )}
                     </div>
+                    {isPictureAdded ? (
+        
+        <div>
+            <p className="added-pic">Du har nu tilføjet et billede!</p>
+            
+        </div>
+        
+    ) : (
+       <div></div>
+    )}
                 </label>
                 <p className="text-error">{errorMessage}</p>
                 <div className="input-container">

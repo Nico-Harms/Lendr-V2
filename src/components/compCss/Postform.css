@@ -410,3 +410,15 @@ form .file-input {
     margin-bottom: 10px;
     color: red;
 }
+
+.uploaded-image {
+    width: 200PX;
+    height: 150px;
+    display: flex;
+}
+
+.added-pic {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
