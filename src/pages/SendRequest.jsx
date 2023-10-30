@@ -7,9 +7,16 @@ import 'react-date-range/dist/theme/default.css';
 import "../pages/pageCss/SendRequest.css";
 import { CaretDown } from "@phosphor-icons/react";
 import { useNavigate } from 'react-router-dom';
+import Swipe from "../components/Swipe";
 
 export default function SendRequest() {
 
+    const [isSwipeOpen, setIsSwipeOpen] = useState(false);
+
+    const toggleSwipe = () => {
+        setIsSwipeOpen(!isSwipeOpen);
+    };
+    
     const navigate = useNavigate();
     const rentNotice = sessionStorage.getItem('rentNotice');
 
@@ -127,7 +134,8 @@ export default function SendRequest() {
 
                 </section>
                 <textarea readOnly value={rentNotice} className="requestTextArea" name="" id="" cols="30" rows="10"></textarea>
-                <button className="loginBtn soMeLogin requestBtn">Send anmodning</button>
+                <button onClick={toggleSwipe} className="loginBtn soMeLogin requestBtn">Send anmodning</button>
+                <Swipe isOpen={isSwipeOpen} toggleSwipe={toggleSwipe} />
             </div>
         </main>
     );
