@@ -14,10 +14,6 @@ export default function Deals() {
     <main className="page">
       <div className="my-deals">
         <h2>Mine aftaler</h2>
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
       </div>
 
       <div className="btn-group">
