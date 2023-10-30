@@ -71,3 +71,19 @@
 .pricePrDay {
     white-space: nowrap;
 }
+
+.noFavorites {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    gap: 20px;
+    border: solid 2px var(--greenPrime);
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14px;
+}
+.noFavorites img {
+    height: 110px;
+}

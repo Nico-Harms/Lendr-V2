@@ -2,9 +2,16 @@ import React from 'react';
 import "../components/compCss/Swipe.css";
 import { CaretRight, Check, X } from "@phosphor-icons/react";
 import { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Swipe({ isOpen, toggleSwipe }) {
     const [isClicked, setIsClicked] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    // Use useParams to get the postId parameter from the URL
+    const { postId } = useParams();
 
     const handleClick = () => {
         setIsClicked(!isClicked);
@@ -18,12 +25,21 @@ export default function Swipe({ isOpen, toggleSwipe }) {
         if (isClicked && isOpen) {
             const closeTimeout = setTimeout(() => {
                 toggleSwipe();
-            }, 1500); 
+
+                // Use the postId extracted from the URL
+                if (postId) {
+                    // Navigate based on the postId parameter
+                    navigate('/home');
+                } else if (location.pathname === '/accepteddeal') {
+                    navigate("/home");
+                }
+            }, 1500);
+
             return () => {
                 clearTimeout(closeTimeout);
-            };
+            }
         }
-    }, [isClicked, toggleSwipe, isOpen]);
+    }, [isClicked, toggleSwipe, isOpen, postId, location.pathname, navigate]);
 
     const swiperClass = isClicked ? 'swiper clicked' : 'swiper';
     const buttonText = isClicked ? 'Accepteret' : 'Acceptér';
