@@ -1,3 +1,4 @@
+// Lavet af Mads
 import React, { useEffect, useState, useRef } from 'react';
 import logo from '../assets/images/lendr-logo.svg';
 import './compCss/Header.css';

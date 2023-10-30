@@ -1,3 +1,4 @@
+//Lavet af Mads
 import bagsImg from "../assets/images/kategori-taske.svg";
 import suitcasesImg from "../assets/images/kategori-kuffert.svg";
 import assImg from "../assets/images/kategori-ass.svg";

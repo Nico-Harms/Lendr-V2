@@ -1,3 +1,4 @@
+//Lavet af Mads
 import { useState, useEffect } from 'react';
 
 function useScrollDirection() {
