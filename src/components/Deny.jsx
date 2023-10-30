@@ -23,7 +23,7 @@ export default function Deny({ isOpen, toggleSwipe }) {
     }, [isClicked, toggleSwipe, isOpen]);
 
     const denyClick = () => {
-        window.location.href = "/aftaler";
+        window.location.href = "/home";
     }
 
     return (

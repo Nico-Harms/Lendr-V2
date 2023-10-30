@@ -30,8 +30,8 @@ export default function Swipe({ isOpen, toggleSwipe }) {
                 if (postId) {
                     // Navigate based on the postId parameter
                     navigate('/home');
-                } else if (location.pathname === '/accepteddeal') {
-                    navigate("/home");
+                } else if (location.pathname === '/request') {
+                    navigate("/accepteddeal");
                 }
             }, 1500);
 

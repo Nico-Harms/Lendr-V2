@@ -13,6 +13,7 @@ import SpecificPost from "./pages/SpecificPost";
 import ChooseCategory from "./pages/ChooseCategory";
 import SendRequest from "./pages/SendRequest";
 import AcceptedDeal from "./pages/AcceptedDeal";
+import Request from "./pages/Request";
 
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/sendrequest/:postId" element={<SendRequest />} />
         <Route path="/choosecategory" element={<ChooseCategory />} />
         <Route path="/accepteddeal" element={<AcceptedDeal />} />
+        <Route path="/request" element={<Request />} />
       </Routes>
     </>
   );
