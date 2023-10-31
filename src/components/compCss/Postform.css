@@ -5,16 +5,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+
+
 .postformLabel {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
+    width: 90%;
+    display: block;   
+    margin: 10px auto;
+}   
 
 .postformSelect {
-    margin: 0.1em auto 1em;
     width: 100%; /* Set input width to 95% */
-    max-width: 350px;
     padding: 1em;
     box-sizing: border-box;
     display: block;
@@ -24,9 +25,7 @@
 }
 
 .postformInput {
-    margin: 0.5em auto 2em;
     width: 100%; /* Set input width to 95% */
-    max-width: 350px;
     padding: 1em;
     box-sizing: border-box;
     display: block;
@@ -37,24 +36,21 @@
 
 
 .input-container {
-    margin: 0.2em auto;
-    width: 85%; 
-    max-width: 350px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+width: 100%
+
 }
 
 .input-notice {
-    margin: 0.5em auto;
-    width: 85%;
-    max-width: 350px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align the text to the top */
+    align-items: center;
+width: 90%;
 }
 
 .input-notice textarea {
-    padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;
     border: #72CA81 1px solid;
@@ -64,11 +60,13 @@
 }
 .input-container label {
     text-align: left;
-    margin-bottom: 2px;
+    width: 90%;
+    margin: 10px auto;
 }
 
 .input-container select,
 .input-container input {
+    width: 90%;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;
@@ -76,9 +74,9 @@
     background-color: var(--white);
 }
 .image-preview {
-    max-width: 346px;
+    margin: 0 auto;
+    width: 100%;
     height: 150px;
-    margin: 0.5em auto;
     cursor: pointer;
     margin-bottom: 20px;
     border: 1px solid var(--greenPrime);
@@ -113,11 +111,11 @@ form .file-input {
 }
 
 .postformWrapper {
-    margin: auto;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    text-align: left;
-    
 }
 
 
@@ -131,8 +129,11 @@ form .file-input {
 }
 
 .color-wrapper{
-    width: 85%;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
 }
 
 .color-container {
@@ -143,6 +144,8 @@ form .file-input {
     margin: 20px auto 10px auto;
     display: flex; /* Add this property */
     flex-direction: column;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .color-container::-webkit-scrollbar {
@@ -153,7 +156,7 @@ form .file-input {
     display: flex;
     overflow-x: scroll; /* Use "scroll" to enable horizontal scrolling */
     -webkit-overflow-scrolling: touch;
-    width: 160%;
+    width: 150%;
     align-items: center;
     height: 40px;
 }
@@ -166,7 +169,7 @@ form .file-input {
 
 
 .color-box {
-    width: 30px; /* Increase the width to make the circles wider */
+    width: 55px; /* Increase the width to make the circles wider */
     height: 30px; /* Adjust the height as needed */
     display: flex;
     align-items: center;
@@ -252,8 +255,8 @@ form .file-input {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 100%;
-    padding: 20px;
+    width: 90%;
+    padding: 20px 0;
     color: gray;
 }
 
@@ -279,6 +282,8 @@ form .file-input {
 }
 
 .postformHr {
+    width: 80%;
+    color: black;
     margin: 25px;
 }
 
@@ -311,10 +316,9 @@ form .file-input {
     position: absolute;
   }
   
-  .switch {
-    height: 100%;
+  .switchWrapper {
+    width: 80%;
     display: block;
-    background-color: #e9e9eb;
     border-radius: 16px;
     cursor: pointer;
     transition: all 0.2s ease-out;
@@ -390,6 +394,10 @@ form .file-input {
 .toggle-switch p {
     margin-left: 10px; /* Adjust the margin as needed */
 }
+
+.botton-box {
+    padding: 20px;
+}
   
 
 .postformButton {
@@ -411,9 +419,8 @@ form .file-input {
 }
 
 .uploaded-image {
-    width: 350px;
-    height: 100%;
-    object-fit: contain;    
+    width: 200PX;
+    height: 150px;
     display: flex;
 }
 

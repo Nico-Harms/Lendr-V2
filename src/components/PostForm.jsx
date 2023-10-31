@@ -125,9 +125,9 @@ export default function PostForm({ savePost, post }) {
 
     }
     return (
+        <main className="postformMain">
         <form className="postformWrapper" onSubmit={handleSubmit}>
             <h1 className="postformH1">Indtast Oplysninger</h1>
-            <div className="test">
             <label className="postformLabel">
                     <input type="file" className="file-input" accept="image/*" onChange={handleImageChange} />
                     <div className="image-preview" src={image} alt="Choose" onError={event => (event.target.src)}>
@@ -246,7 +246,7 @@ export default function PostForm({ savePost, post }) {
                 </div>
 
                 <div className="input-notice">
-                    <label htmlFor="notice">Bemærkning(er)</label>
+                    <label className="postformLabel" htmlFor="notice">Bemærkning(er)</label>
                     <textarea name="notice" className="input-con postformInput" type="text" value={notice} placeholder="Eventuelle bemærkninger skrives her.." onChange={e => setNotice(e.target.value)} />
                 </div>
 
@@ -274,10 +274,10 @@ export default function PostForm({ savePost, post }) {
                     {isSubmitted && <div className="dateError suitcaseSubmitted">{isSubmitted}</div>}
                 </div>
                 
-            </div>
             
         </form>
 
+            </main>
 
     );
 }
