@@ -43,7 +43,7 @@ export default function PostForm({ savePost, post }) {
 
     function handleImageChange(event) {
         const file = event.target.files[0];
-        if (file.size < 500000) {
+        if (file.size < 10000000) {
             setImageFile(file);
             const reader = new FileReader();
             reader.onload = event => {
@@ -53,7 +53,7 @@ export default function PostForm({ savePost, post }) {
             setErrorMessage("");
             setIsPictureAdded(true); // Set isPictureAdded to true when a picture is added
         } else {
-            setErrorMessage("Filen må maksimalt fylde 0.5 MB");
+            setErrorMessage("Filen må maksimalt fylde  10MB");
             setIsPictureAdded(false); // Set isPictureAdded to false when no picture is added
         }
     }

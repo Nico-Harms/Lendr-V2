@@ -20,6 +20,7 @@ export default function LoginPage() {
                     className="loginVid"
                     src={IntroVideo}
                     autoPlay
+                    playsInline
                     muted
                     onEnded={handleVideoEnd}
                 >

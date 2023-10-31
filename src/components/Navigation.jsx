@@ -27,16 +27,16 @@ export default function Navigation() {
     })
   }
 
-useEffect(() => {
-  const navWrapper = document.querySelector('.navWrapper');
-  // Check the pathname and set display to none for '/home'
-  if (location.pathname === '/' || location.pathname === '/signup') {
-    navWrapper.style.display = 'none';
-  } else {
-    navWrapper.style.display = 'flex'; // Show for other paths
+  useEffect(() => {
+    const navWrapper = document.querySelector('.navWrapper');
+    // Check the pathname and set display to none for '/home'
+    if (location.pathname === '/' || location.pathname === '/signup') {
+      navWrapper.style.display = 'none';
+    } else {
+      navWrapper.style.display = 'flex'; // Show for other paths
+    }
   }
-}
-, [location.pathname]);
+    , [location.pathname]);
 
   return (
     <div className="navWrapper">
@@ -47,19 +47,19 @@ useEffect(() => {
           <div className="createPost"> </div>
           <Plus onClick={createPost} size={30} weight="light" color="#fafaff" />
           <div className="category-wrapper">
-          <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
-        <img src={bagsSmall} alt="#" />
-        <p>Rygsække</p>
-    </NavLink>
-    <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
-        <img src={suitcasesSmall} alt="#" />
-        <p>Kufferter</p>
-    </NavLink>
-    <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
-        <img src={otherSmall} alt="#" />
-        <p>Tilbehør</p>
-    </NavLink>
-</div>
+            <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
+              <img src={bagsSmall} alt="#" />
+              <p>Rygsække</p>
+            </NavLink>
+            <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
+              <img src={suitcasesSmall} alt="#" />
+              <p>Kufferter</p>
+            </NavLink>
+            <NavLink onClick={createPost} to="/createpost" className="img-wrapper">
+              <img src={otherSmall} alt="#" />
+              <p>Tilbehør</p>
+            </NavLink>
+          </div>
         </div>
         <NavLink to="/aftaler"> <BagSimple size={32} color={isNavLinkActive('/aftaler') ? '#72ca81' : '#031926'} weight={isNavLinkActive('/aftaler') ? 'fill' : 'light'} /> </NavLink>
         <NavLink to="/profil"> <UserCircle size={32} color={isNavLinkActive('/profil') ? '#72ca81' : '#031926'} weight={isNavLinkActive('/profil') ? 'fill' : 'light'} /> </NavLink>
