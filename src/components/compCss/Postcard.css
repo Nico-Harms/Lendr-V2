@@ -15,17 +15,18 @@
 }
 
 .favoritTekst {
-    display:  flex;
+    display: flex;
     align-items: center;
     gap: 10px;
 }
+
 .postCard {
 
     border: solid 2px var(--greenPrime);
     border-radius: 20px;
     overflow: hidden;
-    width: 100%;
-    
+    width: 340px;
+
 }
 
 .textInfoWrapper {
@@ -44,18 +45,20 @@
 
 .postCardDisplaySection {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 80%;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
+
 .iconwrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
 }
+
 .mapPinWrapper {
     display: flex;
     flex-direction: column;
@@ -83,6 +86,7 @@
     padding: 10px;
     font-size: 14px;
 }
+
 .noFavorites img {
     height: 110px;
 }

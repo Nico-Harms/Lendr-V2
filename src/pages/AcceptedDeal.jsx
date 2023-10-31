@@ -1,3 +1,5 @@
+// Kodet af Tobias
+
 import React, { useState } from 'react';
 import "../pages/pageCss/AcceptedDeal.css";
 import mascot from "../assets/images/maskot.svg";

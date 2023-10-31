@@ -67,9 +67,11 @@
     margin-bottom: 5px;
     width: 100%;
     gap: 40%;
-    font-size: 14px;
+    font-size: 13px;
     justify-content: space-between;
   }
+
+ 
 
   .swap-img {
     object-fit: cover;

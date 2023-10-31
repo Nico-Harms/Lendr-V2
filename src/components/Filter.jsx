@@ -1,3 +1,5 @@
+// Kodet af Tobias & Nicolai
+
 import { motion } from "framer-motion"
 import React, { useState, useEffect } from 'react';
 import { SlidersHorizontal, SortAscending } from "@phosphor-icons/react";
@@ -26,7 +28,7 @@ const containerVariants = {
     },
 };
 
-export default function Filter({ handleSort }) {
+export default function Filter({ handleSort, activeSortOption }) {
 
     const [isSortOpen, setIsSortOpen] = useState(false);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -50,6 +52,7 @@ export default function Filter({ handleSort }) {
     const handleDistanceSliderChange = (event) => {
         setDistanceSliderValue(event.target.value);
     };
+
     const handleSortClick = (option) => {
         handleSort(option);  // Call the original handleSort function
 
@@ -57,6 +60,7 @@ export default function Filter({ handleSort }) {
         setIsFilterOpen(false);
         setIsSortOpen(false);
     };
+    
 
     
     return (
@@ -112,20 +116,20 @@ export default function Filter({ handleSort }) {
                             style={{ pointerEvents: isSortOpen ? 'auto' : 'none' }}
                         >
                             <motion.div variants={itemVariants} onClick={() => handleSortClick("newestFirst")}>
-                                <p>Nyeste først</p>
+                                <p style={{ color: activeSortOption === "newestFirst" ? "#72CA81" : "#031926" }}>Nyeste først</p>
                                 <hr />
                             </motion.div>
                             <motion.div variants={itemVariants} onClick={() => handleSortClick("oldestFirst")}>
-                                <p>Ældste først</p>
+                                <p style={{ color: activeSortOption === "oldestFirst" ? "#72CA81" : "#031926" }} >Ældste først</p>
                                 <hr />
                             </motion.div>
                             <motion.div variants={itemVariants} onClick={() => handleSortClick("lowestPrice")}>
-                                <p>Laveste Pris</p>
+                                <p style={{ color: activeSortOption === "lowestPrice" ? "#72CA81" : "#031926" }}>Laveste Pris</p>
                                 <hr />
                             </motion.div>
 
                             <motion.div variants={itemVariants} onClick={() => handleSortClick("highestPrice")}>
-                                <p>Højeste Pris</p>
+                                <p style={{ color: activeSortOption === "highestPrice" ? "#72CA81" : "#031926" }}>Højeste Pris</p>
                                 <hr />
                             </motion.div>
                             <motion.div variants={itemVariants}>

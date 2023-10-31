@@ -1,3 +1,5 @@
+// Kodet af Emil & Tobias
+
 import React, { useState } from 'react';
 import '../pages/pageCss/Deals.css';
 import Udlejer from '../components/Udlejer';

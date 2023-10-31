@@ -1,3 +1,5 @@
+// Kodet af Tobias & Mads
+
 import React from 'react';
 import "../components/compCss/Swipe.css";
 import { CaretRight, Check, X } from "@phosphor-icons/react";

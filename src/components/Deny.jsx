@@ -1,3 +1,5 @@
+// Kodet af Tobias
+
 import React from 'react';
 import "../components/compCss/Swipe.css";
 import { X } from "@phosphor-icons/react";

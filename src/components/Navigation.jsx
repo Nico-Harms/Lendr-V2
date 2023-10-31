@@ -1,3 +1,5 @@
+// Kodet af Tobias
+
 import { NavLink, useLocation } from "react-router-dom";
 import './compCss/Navigation.css'
 import { House, HeartStraight, BagSimple, UserCircle, Plus } from "@phosphor-icons/react";
@@ -6,8 +8,6 @@ import suitcasesSmall from '../assets/images/category-suitcases.svg'
 import otherSmall from '../assets/images/category-other.svg'
 import { useEffect } from "react";
 
-
-// Kodet af Tobias
 export default function Navigation() {
 
   const location = useLocation();

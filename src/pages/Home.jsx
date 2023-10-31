@@ -31,18 +31,18 @@ export default function Home() {
         } else if (option === "newestFirst") { // Change to "newestFirst"
             sortedPosts.sort((a, b) => b.details.timestamp - a.details.timestamp);
         } else if (option === "oldestFirst") {
-        sortedPosts.sort((a, b) => a.details.timestamp - b.details.timestamp);
+            sortedPosts.sort((a, b) => a.details.timestamp - b.details.timestamp);
         }
-        setPosts([...sortedPosts]); 
+        setPosts([...sortedPosts]);
     }
 
     return (
         <main className="page">
-            <Filter handleSort={handleSort} />
-            <section className="grid-container postCardDisplaySection">
+            <Filter handleSort={handleSort} activeSortOption={sortOption} />
             <h2 style={{ fontSize: '2.2rem', textAlign: 'center' }} className="homeHeader">
-  Opslag nær dig
-</h2>
+                Opslag nær dig
+            </h2>
+            <section className="grid-container postCardDisplaySection">
                 {posts.map(post => (
                     <PostCard post={post} key={post.id} />
                 ))}
