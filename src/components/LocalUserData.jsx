@@ -1,7 +1,7 @@
 
 export default function LocalUserData() {
 
-    const userData = JSON.parse(sessionStorage.getItem('userData'));
+    const userData = JSON.parse(localStorage.getItem('userData'));
 
     return userData;
 

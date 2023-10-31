@@ -79,7 +79,7 @@ const GoogleSignInButton = () => {
 
           if (foundUser) {
             // Store the user's data in local storage
-            sessionStorage.setItem('userData', JSON.stringify(foundUser));
+            localStorage.setItem('userData', JSON.stringify(foundUser));
             console.log('User data stored in local storage:', foundUser);
           }
           navigate('/home');

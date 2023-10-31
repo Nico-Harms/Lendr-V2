@@ -10,7 +10,7 @@ export default function Profil() {
     const [eyeIcon, setEyeIcon] = useState(<EyeSlash size={32} />);
     const [password, setPassword] = useState('');
     const [editMode, setEditMode] = useState(false); // State to track edit mode
-    const userData = JSON.parse(sessionStorage.getItem('userData')) || {
+    const userData = JSON.parse(localStorage.getItem('userData')) || {
         firstName: '',
         lastName: '',
         email: '',
@@ -54,7 +54,7 @@ export default function Profil() {
         userData.phoneNumber = editedPhoneNumber;
         userData.address = editedAddress;
         userData.birthday = editedBirthday;
-        sessionStorage.setItem('userData', JSON.stringify(userData));
+        localStorage.setItem('userData', JSON.stringify(userData));
         setEditMode(false);
     };
 

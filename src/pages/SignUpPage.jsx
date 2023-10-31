@@ -77,7 +77,7 @@ const SignupPage = () => {
             phoneNumber,
             birthday,
         };
-        sessionStorage.setItem('userData', JSON.stringify(formData));
+        localStorage.setItem('userData', JSON.stringify(formData));
         console.log(formData)   
 
         navigate('/choosecategory');
@@ -108,7 +108,7 @@ const SignupPage = () => {
           phoneNumber,
           birthday,
         };
-        sessionStorage.setItem('userData', JSON.stringify(formData));
+        localStorage.setItem('userData', JSON.stringify(formData));
         console.log(formData);
 
         navigate('/choosecategory');
