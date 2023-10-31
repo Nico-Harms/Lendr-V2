@@ -50,8 +50,22 @@ export default function SendRequest() {
     }
 
     const handleDateChange = (ranges) => {
+        // Calculate the number of dates picked
+        const { startDate, endDate } = ranges.selection;
+        const numberOfDatesPicked = startDate && endDate ? (endDate - startDate) / (1000 * 60 * 60 * 24) + 1 : 0;
+
+        // Update the date range state
         setDateRange([ranges.selection]);
-    }
+
+        const actualPrice = post.details.price * numberOfDatesPicked;
+
+        // Round 'actualPrice' to one decimal place
+        const roundedPrice = actualPrice.toFixed(0);
+
+        // Update the roundedPrice state
+        setRoundedPrice(roundedPrice);
+    };
+
 
     const displayCalender = showCalender ? "dateRangePicker show" : "dateRangePicker";
 
