@@ -31,8 +31,7 @@
 .textInfoWrapper {
     padding: 10px;
     display: flex;
-    justify-content: center;
-    gap: 100px;
+    justify-content: space-between;
 }
 
 .textInfo {
