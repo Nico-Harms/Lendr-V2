@@ -24,6 +24,7 @@ export default function PostForm({ savePost, post }) {
     const navigate = useNavigate();
     const [isPictureAdded, setIsPictureAdded] = useState(false);
     const [dateError, setDateError] = useState("");
+    const [isSubmitted, setIsSubmitted] = useState("");
 
 
     useEffect(() => {
@@ -115,8 +116,13 @@ export default function PostForm({ savePost, post }) {
         savePost(formData);
 
         // Display a success message
-        alert('Opslag oprettet');
-        navigate('/home');
+        
+        setIsSubmitted("Din kuffert er oprettet");
+
+        setTimeout(() => {
+            navigate('/home');
+        }, 3000);
+
     }
     return (
         <form className="postformWrapper" onSubmit={handleSubmit}>
@@ -265,6 +271,7 @@ export default function PostForm({ savePost, post }) {
                 <div className="botton-box">
                     <button className="postformButton" type="submit">Opret</button>
                     {dateError && <div className="dateError">{dateError}</div>}
+                    {isSubmitted && <div className="dateError suitcaseSubmitted">{isSubmitted}</div>}
                 </div>
                 
             </div>

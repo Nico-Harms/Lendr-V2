@@ -136,4 +136,8 @@
     top: -25px;
 }
 
+.suitcaseSubmitted {
+    color: var(--greenPrime);
+}
+
 
