@@ -113,16 +113,18 @@ export default function SendRequest() {
                         />
 
                         
-
+        
                         <div className="periodInfoText">
                             <div><p>Lejepris:</p> <span>{roundedPrice} kr.</span></div>
                             <div><p>Depositum:</p> <span>1000 kr.</span></div>
                         </div>
 
                     </div>
+                    
+                </section>
+                <section className="rentPeriodWrapper">
                     <div className="rentPeriodImgWrapper"><img src={post.image} alt="" /></div>
                 </section>
-
                 <section className="productInfoWrapper">
                     <h3>Produktoplysninger</h3>
                     <div className="productInfo">

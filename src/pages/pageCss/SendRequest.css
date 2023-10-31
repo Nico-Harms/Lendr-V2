@@ -17,6 +17,7 @@
 
 .rentPeriodWrapper{
     flex-direction: column;
+    position: relative;
 }
 
 .rentPeriodWrapper img {
@@ -27,9 +28,9 @@
 }
 
 .rentPeriodImgWrapper{
-    position: relative;
-    right: -200px;
-    top: -75px;
+    position: absolute;
+    right: calc(0% - 80px);
+    top: -125px;
 }
 
 .sendRequestMain {
@@ -72,7 +73,8 @@
 .productInfoWrapper {
     flex-direction: column;
     gap: 15px;
-    margin-top: -50px;
+    margin-top: 50px;
+    
 }
 
 .productInfo{
