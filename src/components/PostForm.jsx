@@ -169,7 +169,7 @@ export default function PostForm({ savePost, post }) {
                 <div className="input-container">
                     <label className="postformLabel" htmlFor="size">Størrelse</label>
                     <select className="postformSelect" name="size" value={size} onChange={e => setSize(e.target.value)}>
-                        <option value="">Str (25L - 105L)</option>
+                        <option value="">Vælg størrelse</option>
                         <option value="25 L">25 L</option>
                         <option value="40 L">40 L</option>
                         <option value="70 L">70 L</option>

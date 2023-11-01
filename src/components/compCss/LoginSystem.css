@@ -188,3 +188,8 @@ input::placeholder {
         opacity: 0;
     }
 }
+
+
+button{
+  color: var(--navy);
+}

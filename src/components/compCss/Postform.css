@@ -22,6 +22,8 @@
     border-radius: 5px;
     border: #72CA81 2px solid;
     color: grey;
+    -webkit-appearance: none;
+    font-style: italic;
 }
 
 .postformInput {
