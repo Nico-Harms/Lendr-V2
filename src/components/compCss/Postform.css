@@ -50,12 +50,13 @@
     width: 90%;
 }
 
-.input-notice textarea {
+.input-container textarea {
     box-sizing: border-box;
     border-radius: 5px;
     border: #72CA81 1px solid;
     height: 100px;
     background-color: var(--white);
+    width: 90%;
 
 }
 
@@ -118,6 +119,7 @@ form .file-input {
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 10px;
 }
 
 
@@ -443,4 +445,8 @@ form .file-input {
     display: flex;
     justify-content: center;
     font-weight: bold;
+}
+
+.input-notice label{
+
 }

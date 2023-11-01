@@ -245,7 +245,7 @@ export default function PostForm({ savePost, post }) {
                     />
                 </div>
 
-                <div className="input-notice">
+                <div className="input-container">
                     <label className="postformLabel" htmlFor="notice">Bemærkning(er)</label>
                     <textarea name="notice" className="input-con postformInput" type="text" value={notice} placeholder="Eventuelle bemærkninger skrives her.." onChange={e => setNotice(e.target.value)} />
                 </div>
@@ -264,7 +264,7 @@ export default function PostForm({ savePost, post }) {
                         <input type="checkbox" />
                         <span className="slider"></span>
                     </label>
-                    <p>Accepter Handelsbetingleser</p>
+                    <p>Accepter Handelsbetingeleser</p>
                 </div>
 
                 
