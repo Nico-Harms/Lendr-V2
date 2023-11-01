@@ -73,7 +73,7 @@ export default function PostForm({ savePost, post }) {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        if (!title || !image || !price || !quality || !size || !color || !notice) {
+        if (!title || !image || !price || !quality || !size) {
             setDateError("Udfyld venligst alle felter*");
             return;
         }
