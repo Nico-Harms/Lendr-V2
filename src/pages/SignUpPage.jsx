@@ -159,7 +159,7 @@ const SignupPage = () => {
         )}
 
         <div className='inputWrapper'>
-          <label htmlFor="address">Adresse</label>
+          <label htmlFor="address">Postnummer</label>
           <input placeholder='Indtast postnummer' className='inputField' type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
         </div>
 
