@@ -1,4 +1,4 @@
-//   Lavet af Nicolai  
+//   Lavet af Nicolai & Mads
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';

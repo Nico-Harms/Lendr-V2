@@ -1,3 +1,5 @@
+// Kodet af Emil & Mads
+
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams
 import "../pages/pageCss/SpecificPost.css";

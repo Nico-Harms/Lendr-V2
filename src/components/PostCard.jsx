@@ -1,3 +1,5 @@
+// Kodet af Emil & Mads
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './compCss/Postcard.css';

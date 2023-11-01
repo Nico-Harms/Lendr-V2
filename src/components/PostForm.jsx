@@ -1,3 +1,5 @@
+// Kodet af Emil
+
 import { useEffect, useState } from "react";
 import "../components/compCss/Postform.css";
 import { getDatabase, ref, push, set, serverTimestamp } from 'firebase/database';

@@ -1,4 +1,4 @@
-//Kodet af Tobias
+//Kodet af Tobias & Emil
 
 import Swap from '../assets/images/suitcase-test.svg'
 import Sleepy from '../assets/images/sleepymascot.svg'
